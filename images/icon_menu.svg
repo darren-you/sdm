@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon_search</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="voicematch" transform="translate(-333.000000, -50.000000)" stroke="#FFFFFF" stroke-width="2.2">
+            <g id="icon_search" transform="translate(333.000000, 50.000000)">
+                <g id="编组-5" transform="translate(4.500000, 5.000000)">
+                    <rect id="矩形" x="-4.54747351e-13" y="0" width="6.17732069" height="6.17732069" rx="1"></rect>
+                    <rect id="矩形备份" x="10.1773207" y="0" width="6.17732069" height="6.17732069" rx="1"></rect>
+                    <rect id="矩形备份-2" x="10.1773207" y="9.53218921" width="6.17732069" height="6.17732069" rx="1"></rect>
+                    <rect id="矩形备份-3" x="-4.54747351e-13" y="9.53218921" width="6.17732069" height="6.17732069" rx="1"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
