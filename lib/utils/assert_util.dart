@@ -29,6 +29,7 @@ class AssertUtil {
   static const String iconTabGeneralChatSelect =
       "images/icon_tab_general_chat_select.svg";
   static const String iconTabMe = "images/icon_tab_me.svg";
+  static const String iconDiscover = "images/icon_discover.svg";
   static const String iconTabMeSelect = "images/icon_tab_me_select.svg";
   static const String iconTabDiscover = "images/icon_tab_discover.svg";
 
