@@ -3,7 +3,7 @@ A serious and discreet meeting app, built with Flutter.
 
 
 # 部分页面截图
-<div style="display: flex; justify-content: center; align-items: left;">
+<div style="display: flex; justify-content: left; align-items: center;">
   <div style="flex: 1; margin: 0 10px;">
     <img src="https://github.com/darren-you/sdm/blob/master/images/app/login_page.png" alt="用户登录" width="50%" height="50%" />
     <p style="text-align: center;">用户登录</p>
