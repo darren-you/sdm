@@ -1,6 +1,6 @@
 # sdm
 
-Serious Discreet Meet.
+A serious and discreet meeting app, built with Flutter.
 
 ## Getting Started
 
