@@ -10,10 +10,10 @@ class MessagePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.background.color,
-      body: Container(
+      body: SizedBox(
         width: context.width,
         height: context.height,
-        color: Colors.blue,
+        //color: Colors.blue,
         child: const Center(
           child: Text('message page'),
         ),

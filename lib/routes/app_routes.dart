@@ -1,10 +1,12 @@
 import 'package:get/get.dart';
 import 'package:sdm/business/login/login_page.dart';
 import 'package:sdm/business/login/login_page_controller.dart';
+import 'package:sdm/business/signin/signin_page.dart';
 import 'package:sdm/utils/routes_util.dart';
 
 import '../business/home/home_page.dart';
 import '../business/home/home_page_controller.dart';
+import '../business/signin/signin_page_controller.dart';
 
 class AppPages {
   static List<GetPage<dynamic>>? appRoutes = [
@@ -26,6 +28,17 @@ class AppPages {
       binding: BindingsBuilder(
         () {
           Get.lazyPut(() => LoginPageController());
+        },
+      ),
+    ),
+
+    /// 注册界面
+    GetPage(
+      name: RoutesPath.signinPage,
+      page: () => const SigninPage(),
+      binding: BindingsBuilder(
+        () {
+          Get.lazyPut(() => SigninPageController());
         },
       ),
     ),

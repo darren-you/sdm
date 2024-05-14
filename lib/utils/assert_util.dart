@@ -40,5 +40,9 @@ class AssertUtil {
   static const String iconGo = "images/icon_go.svg";
   static const String iconMeCoin = "images/icon_me_coin.svg";
 
+  /// 登陆界面
+  static const String iconTitleBack = "images/icon_title_back.svg";
+  static const String bgSigninEmail = "images/bg_email.svg";
+
   static const String no = "";
 }
