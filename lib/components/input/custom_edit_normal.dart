@@ -1,45 +1,51 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:sdm/utils/color_util.dart';
 
 import '../../enumm/color_enum.dart';
 import '../../utils/assert_util.dart';
 import '../container/custom_icon_button.dart';
 
-class CustomEdit extends StatelessWidget {
+class CustomEditNormal extends StatelessWidget {
   final double? width;
   final double? height;
   final Color? backgroundColor;
   final Color? cursorColor;
+  final Widget? leftIcon;
   final TextAlign textAlign;
   final BorderRadiusGeometry? borderRadius;
   final FocusNode? focusNode;
   final TextEditingController? editController;
+  final bool showSuffixIcon;
   final bool obscureText; // 文本是否可见
-  final bool showSuffixIcon; // 右侧图标是否显示
   final TextInputType? keyboardType; // 输入文本类型
   final String? hintText;
+  final TextStyle? hintStyle;
   final bool? enableShowBorder;
   final int? maxLength;
   final List<TextInputFormatter>? inputFormatters;
   final Function(String value)? onChanged;
   final Function()? onTap;
 
-  const CustomEdit({
+  const CustomEditNormal({
     super.key,
     this.width,
     this.height,
     this.backgroundColor = Colors.white,
     this.cursorColor,
+    this.leftIcon,
     this.textAlign = TextAlign.left,
     this.borderRadius,
     this.focusNode,
     this.editController,
     this.keyboardType,
     this.hintText,
+    this.hintStyle,
     this.enableShowBorder = false,
-    this.obscureText = false,
     this.showSuffixIcon = true,
+    this.obscureText = false,
     this.maxLength,
     this.inputFormatters,
     this.onChanged,
@@ -104,63 +110,54 @@ class CustomEdit extends StatelessWidget {
                     border: InputBorder.none,
                     hintText: hintText,
                     contentPadding: const EdgeInsets.only(bottom: 3),
-                    hintStyle: const TextStyle(
-                      color: Colors.black45,
-                    ),
+                    hintStyle: hintStyle,
                     // 设置左边显示密码Icon
                     prefixIconConstraints: const BoxConstraints(
                       maxWidth: 48,
                       maxHeight: 48,
                     ),
-                    prefixIcon: Container(
-                      width: 48,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(6),
-                        //color: Colors.blue,
-                      ),
-                      // fix 此处图标切换有抖动，大小也需要调整
-                      child: (controller.focusNode!.hasFocus &&
-                              keyboardType == TextInputType.visiblePassword)
-                          ? CustomIconButton(
-                              controller.showPassword
-                                  ? AssertUtil.iconVisible
-                                  : AssertUtil.iconInvisible,
-                              iconSize: 20,
-                              onTap: () {
-                                controller.toggleShowPass();
-                              },
-                            )
-                          : Container(color: Colors.transparent),
-                    ),
+                    prefixIcon: leftIcon != null
+                        ? Container(
+                            alignment: Alignment.center,
+                            width: 48,
+                            //color: Colors.amber,
+                            // fix 此处图标切换有抖动，大小也需要调整
+                            child: leftIcon,
+                          )
+                        : const SizedBox(
+                            width: 16,
+                          ),
 
                     // 设置右边显示删除输入Icon
                     suffixIconConstraints: const BoxConstraints(
                       maxWidth: 48,
                       maxHeight: 48,
                     ),
-                    suffixIcon: Container(
-                      width: 48,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(6),
-                        //color: Colors.blue,
-                      ),
-                      child: (controller.focusNode!.hasFocus &&
-                              controller.editController!.text.isNotEmpty &&
-                              showSuffixIcon)
-                          ? CustomIconButton(
-                              AssertUtil.iconClose,
-                              //margin: const EdgeInsets.symmetric(horizontal: 12),
-                              iconSize: 12,
-                              onTap: () {
-                                controller.clearText();
-                                // 调用回调函数
-                                if (null != onChanged) {
-                                  onChanged!('');
-                                }
-                              },
-                            )
-                          : Container(color: Colors.transparent),
-                    ),
+                    suffixIcon: showSuffixIcon
+                        ? Container(
+                            alignment: Alignment.center,
+                            width: 48,
+                            //color: Colors.amber,
+                            // fix 此处图标切换有抖动，大小也需要调整
+                            child: (controller.focusNode!.hasFocus &&
+                                    keyboardType ==
+                                        TextInputType.visiblePassword &&
+                                    showSuffixIcon)
+                                ? CustomIconButton(
+                                    controller.showPassword
+                                        ? AssertUtil.iconSee
+                                        : AssertUtil.iconCantSee,
+                                    iconSize: 22,
+                                    defaultColor: HexColor("#A2A2A2"),
+                                    onTap: () {
+                                      controller.toggleShowPass();
+                                    },
+                                  )
+                                : Container(
+                                    color: Colors.transparent,
+                                  ),
+                          )
+                        : const SizedBox(width: 16),
                   ),
                 ),
               ),

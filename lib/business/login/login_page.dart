@@ -109,7 +109,7 @@ Widget loginFunWidget(BuildContext context) {
         CustomContainer(
           borderRadius: BorderRadius.circular(12),
           duration: const Duration(milliseconds: 100),
-          onTap: () => Get.toNamed(RoutesPath.signinPage),
+          onTap: () => Get.toNamed(RoutesPath.signUpPage),
           child: Container(
             width: 252.w,
             height: 48.h,
@@ -184,7 +184,7 @@ Widget loginFunWidget(BuildContext context) {
                 ),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
-                    Get.toNamed(RoutesPath.signinPage);
+                    Get.toNamed(RoutesPath.signInPage);
                   },
               ),
             ],

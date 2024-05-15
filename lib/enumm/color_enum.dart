@@ -33,6 +33,10 @@ enum MyColors {
   bgColor(color: Color(0xFFFFFFFF)),
   myInfoTextColor(color: Color(0xFF121212)),
   myInfoSecondTextColor(color: Color(0xFFA6AAAF)),
+  inputiHintBackgrounfColor(color: Color(0xFFEFEFEF)),
+  inputiHintColor(color: Color(0xFFA2A2A2)),
+  textFgPwdColor(color: Color(0xFF5D5D5D)),
+  textMindColor(color: Color(0xFFFF5B78)),
 
   endColor(color: Colors.amber);
 
