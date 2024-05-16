@@ -1,21 +1,19 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:sdm/components/input/custom_edit_normal.dart';
-import 'package:sdm/components/view/custom_body.dart';
-import 'package:sdm/enumm/color_enum.dart';
-import 'package:sdm/services/app_init_service.dart';
-import 'package:sdm/utils/assert_util.dart';
-import 'package:sdm/utils/color_util.dart';
-import 'package:sdm/utils/routes_util.dart';
+import 'package:sdm/business/account/sign_up/basic_info_controller.dart';
 
+import '../../../components/input/custom_edit_normal.dart';
+import '../../../components/view/custom_body.dart';
+import '../../../enumm/color_enum.dart';
+import '../../../utils/assert_util.dart';
+import '../../../utils/color_util.dart';
 import '../view/title_bar.dart';
-import 'signup_page_controller.dart';
+import 'view/slide_track_shap.dart';
 
-class SignupPage extends GetView<SignupPageController> {
-  const SignupPage({super.key});
+class BasicInfoPage extends GetView<BasicInfoController> {
+  const BasicInfoPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +24,7 @@ class SignupPage extends GetView<SignupPageController> {
       body: CustomBody(
         scroller: false,
         appBarHeight: appBarHeight,
-        appBar: const CustomSignTitleBar(title: 'Sign up'),
+        appBar: const CustomSignTitleBar(title: 'Basic info'),
         body: SizedBox(
           width: context.width,
           height: 600.h,
@@ -40,7 +38,7 @@ class SignupPage extends GetView<SignupPageController> {
               ),
 
               /// 登陆输入
-              _inputAccountInfo(context, controller),
+              _inputUserInfo(context, controller),
 
               /// 注册Card
               _bottomPic(context),
@@ -53,11 +51,10 @@ class SignupPage extends GetView<SignupPageController> {
 }
 
 /// 登陆输入
-Widget _inputAccountInfo(
-    BuildContext context, SignupPageController controller) {
+Widget _inputUserInfo(BuildContext context, BasicInfoController controller) {
   return Container(
     width: context.width,
-    height: 291.h,
+    height: 398.h,
     margin: EdgeInsets.only(left: 18.w, top: 26.h, right: 18.w),
     padding: EdgeInsets.only(left: 12.w, top: 18.h),
     decoration: BoxDecoration(
@@ -79,13 +76,13 @@ Widget _inputAccountInfo(
           child: Column(
             children: [
               CustomEditNormal(
-                editController: controller.emailController,
+                editController: controller.usernameController,
                 height: 48.h,
                 backgroundColor: MyColors.inputiHintBackgrounfColor.color,
                 borderRadius: BorderRadius.circular(44.r),
                 leftIcon: SvgPicture.asset(AssertUtil.iconEmail),
                 showSuffixIcon: false,
-                hintText: 'Email address',
+                hintText: 'Username',
                 hintStyle: TextStyle(
                   fontSize: 18.sp,
                   color: MyColors.inputiHintColor.color,
@@ -93,58 +90,46 @@ Widget _inputAccountInfo(
               ),
               SizedBox(height: 28.h),
               CustomEditNormal(
-                editController: controller.passwordController,
+                editController: controller.locationController,
                 height: 48.h,
                 backgroundColor: MyColors.inputiHintBackgrounfColor.color,
                 borderRadius: BorderRadius.circular(44.r),
-                keyboardType: TextInputType.visiblePassword,
                 leftIcon: SvgPicture.asset(AssertUtil.iconPassword),
-                hintText: 'Password',
+                hintText: 'Location',
                 hintStyle: TextStyle(
                   fontSize: 18.sp,
                   color: MyColors.inputiHintColor.color,
                 ),
               ),
-              SizedBox(height: 8.h),
-              Obx(
-                () => Container(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    controller.mindInfo.value,
-                    style: TextStyle(
-                      color: MyColors.textMindColor.color,
-                    ),
-                  ),
-                ),
+              SizedBox(height: 24.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text('My age'),
+                  Obx(() => Text(controller.ageValue.value.toString())),
+                ],
               ),
-              SizedBox(height: 9.h),
-              Align(
-                alignment: Alignment.centerRight,
-                child: GestureDetector(
-                  onTap: () {
-                    logger.i('Click > > > Forget Password');
-                  },
-                  child: RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                          text: 'Already a member?',
-                          style: TextStyle(
-                            fontSize: 15.sp,
-                            color: MyColors.textFgPwdColor.color,
-                          ),
-                        ),
-                        TextSpan(
-                            text: ' Sign in',
-                            style: TextStyle(
-                              fontSize: 15.sp,
-                              color: MyColors.mainColor.color,
-                            ),
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = () {
-                                Get.toNamed(RoutesPath.signInPage);
-                              }),
-                      ],
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 20.w),
+                child: SliderTheme(
+                  data: SliderTheme.of(context).copyWith(
+                    activeTrackColor: MyColors.mainColor.color,
+                    inactiveTrackColor: MyColors.background.color,
+                    thumbColor: Colors.white,
+                    trackShape: CustomTrackShape(),
+                    trackHeight: 0.5.h,
+                  ),
+                  child: Obx(
+                    () => Slider(
+                      value: controller.ageValue.value * 1.0,
+                      onChanged: (double newValue) =>
+                          controller.ageValue.value = newValue.round(),
+                      onChangeEnd: (double newValue) =>
+                          controller.ageValue.value = newValue.round(),
+                      min: 0.0,
+                      max: 100.0,
+                      divisions: 100,
+                      //label: controller.ageValue.value.toString(),
                     ),
                   ),
                 ),
@@ -152,11 +137,45 @@ Widget _inputAccountInfo(
             ],
           ),
         ),
+        SizedBox(height: 6.h),
+        Container(
+          alignment: Alignment.centerLeft,
+          child: const Text('My gender'),
+        ),
+        Row(
+          children: <Widget>[
+            Obx(
+              () => Radio(
+                value: 'Male',
+                groupValue: controller.radioValue.value,
+                activeColor: Colors.black,
+                onChanged: (data) => controller.radioValue.value = data!,
+                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              ),
+            ),
+            const Text(
+              'Male',
+              style: TextStyle(fontSize: 18.0),
+            ),
+            Obx(
+              () => Radio(
+                value: 'Female',
+                groupValue: controller.radioValue.value,
+                activeColor: Colors.black,
+                onChanged: (data) => controller.radioValue.value = data!,
+              ),
+            ),
+            const Text(
+              'Female',
+              style: TextStyle(fontSize: 18.0),
+            ),
+          ],
+        ),
         Expanded(
           child: Align(
             alignment: Alignment.centerRight,
             child: GestureDetector(
-              onTap: controller.nextStep,
+              onTap: () {},
               child: Obx(
                 () => Container(
                   width: 94.w,
@@ -204,12 +223,11 @@ Widget _bottomPic(BuildContext context) {
   return Expanded(
     child: Container(
       margin: EdgeInsets.only(
-        top: 24.h,
         bottom: context.mediaQueryPadding.bottom,
       ),
       child: SvgPicture.asset(
-        AssertUtil.bgSigninEmail,
-        fit: BoxFit.contain,
+        AssertUtil.bgBasicInfo,
+        fit: BoxFit.cover,
       ),
     ),
   );

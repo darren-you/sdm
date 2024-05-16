@@ -44,6 +44,7 @@ class AssertUtil {
   /// 登陆界面
   static const String iconTitleBack = "images/icon_title_back.svg";
   static const String bgSigninEmail = "images/bg_email.svg";
+  static const String bgBasicInfo = "images/bg_basic.svg";
   static const String iconEmail = "images/icon_email.svg";
   static const String iconPassword = "images/icon_password.svg";
   static const String iconSee = "images/icon_see.svg";

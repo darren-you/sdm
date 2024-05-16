@@ -3,4 +3,5 @@ class RoutesPath {
   static const loginPage = '/loginPage';
   static const signInPage = '/signInPage';
   static const signUpPage = '/signUpPage';
+  static const basicInfoPage = '/basicInfoPage';
 }
