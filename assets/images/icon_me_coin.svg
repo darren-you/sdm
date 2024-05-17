@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="21px" viewBox="0 0 20 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon_coin_20</title>
+    <defs>
+        <circle id="path-1" cx="8.04975083" cy="7.97683857" r="7.91859992"></circle>
+        <filter x="-20.5%" y="-20.5%" width="141.0%" height="141.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="0.25" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.654901961   0 0 0 0 0.329411765  0 0 0 0.306708916 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M4.4213502,7.67129064 L2.36228901,8.75104224 C2.11118398,8.87659475 1.80985796,8.77615274 1.68430544,8.55015822 C1.63408443,8.44971621 1.60897393,8.3492742 1.63408444,8.22372169 L2.03585247,5.93866597 C2.06096297,5.78800295 2.01074197,5.61222943 1.88518947,5.48667693 L0.227896305,3.87960478 C0.0270122884,3.67872076 0.0270122884,3.37739472 0.227896305,3.17651071 C0.303227814,3.1011792 0.403669822,3.0509582 0.50411183,3.02584769 L2.78916755,2.69941116 C2.96494107,2.67430066 3.09049357,2.57385865 3.16582508,2.42319563 L4.19535568,0.33902393 C4.32090819,0.0879189048 4.62223423,-0.0125231036 4.87333925,0.113029413 C4.97378126,0.163250422 5.04911277,0.238581922 5.09933377,0.33902393 L6.12886437,2.42319563 C6.20419588,2.57385865 6.35485889,2.67430066 6.5055219,2.69941116 L8.79057762,3.02584769 C9.06679315,3.0760687 9.26767716,3.32717372 9.21745616,3.60338925 C9.19234566,3.70383126 9.14212465,3.80427327 9.06679315,3.87960478 L7.40949999,5.48667693 C7.28394748,5.61222943 7.23372647,5.76289245 7.25883698,5.93866597 L7.66060501,8.22372169 C7.71082602,8.49993721 7.5350525,8.75104224 7.25883698,8.80126325 C7.15839497,8.82637375 7.03284245,8.80126325 6.93240044,8.75104224 L4.87333925,7.67129064 C4.74778674,7.57084863 4.57201323,7.57084863 4.4213502,7.67129064 Z" id="path-3"></path>
+        <filter x="-38.3%" y="-28.6%" width="176.5%" height="180.0%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.864781476   0 0 0 0 0.350587085   0 0 0 0 0  0 0 0 0.432337194 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M4.47607733,6.90075616 L2.9072688,7.72342405 C2.71595069,7.8190831 2.48636896,7.74255586 2.3907099,7.57036956 C2.35244627,7.49384231 2.33331446,7.41731507 2.35244628,7.32165601 L2.65855525,5.58066118 C2.67768706,5.46587031 2.63942345,5.33194763 2.54376439,5.23628857 L1.28106484,4.01185265 C1.12801035,3.85879816 1.12801035,3.62921642 1.28106484,3.47616193 C1.33846028,3.4187665 1.41498752,3.38050288 1.49151476,3.36137106 L3.2325096,3.11265751 C3.36643228,3.0935257 3.46209133,3.01699846 3.51948677,2.90220759 L4.30389103,1.31426724 C4.39955009,1.12294913 4.62913183,1.04642188 4.82044994,1.14208094 C4.89697719,1.18034457 4.95437262,1.23774 4.99263624,1.31426724 L5.77704051,2.90220759 C5.83443594,3.01699846 5.94922681,3.0935257 6.06401768,3.11265751 L7.80501251,3.36137106 C8.01546243,3.39963469 8.16851692,3.59095279 8.1302533,3.80140272 C8.11112149,3.87792997 8.07285787,3.95445721 8.01546243,4.01185265 L6.75276288,5.23628857 C6.65710383,5.33194763 6.6188402,5.4467385 6.63797202,5.58066118 L6.944081,7.32165601 C6.98234462,7.53210593 6.84842194,7.72342405 6.63797202,7.76168767 C6.56144478,7.78081948 6.46578572,7.76168767 6.38925847,7.72342405 L4.82044994,6.90075616 C4.72479089,6.82422892 4.59086821,6.82422892 4.47607733,6.90075616 Z" id="path-5"></path>
+        <filter x="-50.2%" y="-37.5%" width="200.4%" height="205.0%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.997254303   0 0 0 0 0.58438416   0 0 0 0 0.30288179  0 0 0 0.432337194 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="me" transform="translate(-234.000000, -566.000000)">
+            <g id="icon_coin_64" transform="translate(234.000000, 566.500000)">
+                <g id="编组-2" transform="translate(2.000000, 2.000000)">
+                    <g id="椭圆形备份-11">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use stroke="#FFFFFF" stroke-width="0.5" fill="#FFA754" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                    <g id="编组备份-13" transform="translate(3.459626, 2.680299)" fill-rule="nonzero">
+                        <g id="路径">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                            <use fill="#FFFFFF" xlink:href="#path-3"></use>
+                        </g>
+                        <g id="路径">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                            <use fill="#FFFFFF" xlink:href="#path-5"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

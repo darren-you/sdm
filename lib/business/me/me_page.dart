@@ -38,7 +38,7 @@ class MePage extends StatelessWidget {
                         /// 头像背景图片
                         Positioned.fill(
                           child: ExtendedImage.asset(
-                            "images/photo2.png",
+                            "assets/images/photo2.png",
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -84,7 +84,7 @@ class MePage extends StatelessWidget {
                             children: [
                               ClipOval(
                                 child: ExtendedImage.asset(
-                                  "images/photo2.png",
+                                  "assets/images/photo2.png",
                                   width: 80.r,
                                   height: 80.r,
                                   fit: BoxFit.cover,
@@ -351,7 +351,7 @@ class MePage extends StatelessWidget {
                                                   BorderRadius.circular(8.r),
                                             ),
                                             child: ExtendedImage.asset(
-                                              "images/photo${index + 1}.png",
+                                              "assets/images/photo${index + 1}.png",
                                               fit: BoxFit.cover,
                                             ),
                                           );

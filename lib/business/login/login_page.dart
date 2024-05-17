@@ -51,14 +51,14 @@ Widget backgrounWidget(BuildContext context) {
           children: [
             Expanded(
               child: ExtendedImage.asset(
-                "images/photo${index * 2 + 1}.png",
+                "assets/images/photo${index * 2 + 1}.png",
                 height: 220.h,
                 fit: BoxFit.cover,
               ),
             ),
             Expanded(
               child: ExtendedImage.asset(
-                "images/photo${index * 2 + 2}.png",
+                "assets/images/photo${index * 2 + 2}.png",
                 height: 220.h,
                 fit: BoxFit.cover,
               ),

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/Title/Back</title>
+    <defs>
+        <path d="M10.6509924,5.05835997 C11.1032273,5.51732359 11.1282852,6.23734868 10.729808,6.72525902 L10.6379387,6.82607873 L5.54240963,11.8456923 L23.4217442,11.8458213 C24.1121001,11.8458213 24.6717442,12.4054654 24.6717442,13.0958213 C24.6717442,13.74303 24.1798695,14.2753552 23.5495494,14.3393677 L23.4217442,14.3458213 L6.08040963,14.3456923 L10.6379387,18.8345975 C11.0969023,19.2868324 11.132591,20.0064089 10.7413628,20.5001508 L10.6509924,20.6023162 C10.1987575,21.0612799 9.47918099,21.0969685 8.98543908,20.7057403 L8.88327362,20.6153699 L0.982409627,12.8303381 L8.88327362,5.04530629 C9.37502035,4.56076891 10.166455,4.56661324 10.6509924,5.05835997 Z" id="path-1"></path>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="signin1.1" transform="translate(-16.000000, -72.000000)">
+            <g id="编组" transform="translate(16.000000, 72.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="形状结合" fill="#1E1E1E" fill-rule="nonzero" xlink:href="#path-1"></use>
+                <g mask="url(#mask-2)" fill="#1E1E1E" id="color/light-mode/#1e">
+                    <g>
+                        <rect id="矩形" x="0" y="0" width="26" height="26"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

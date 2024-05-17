@@ -1,0 +1,2034 @@
+{
+  "results" : [
+    {
+      "columns" : [
+        {
+          "name" : "COUNTRY_ID",
+          "type" : "NUMBER"
+        },
+        {
+          "name" : "COUNTRY_NAME",
+          "type" : "VARCHAR2"
+        },
+        {
+          "name" : "COUNTRY_ABBR",
+          "type" : "VARCHAR2"
+        },
+        {
+          "name" : "WEIGHT",
+          "type" : "NUMBER"
+        },
+        {
+          "name" : "IS_DEVELOPED",
+          "type" : "NUMBER"
+        },
+        {
+          "name" : "COUNTRY_CODE",
+          "type" : "VARCHAR2"
+        }
+      ],
+      "items" : [
+        {
+          "country_id" : 1,
+          "country_name" : "Afghanistan",
+          "country_abbr" : "AF",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "AFG"
+        },
+        {
+          "country_id" : 2,
+          "country_name" : "Åland",
+          "country_abbr" : "AX",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "ALA"
+        },
+        {
+          "country_id" : 3,
+          "country_name" : "Albania",
+          "country_abbr" : "AL",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "ALB"
+        },
+        {
+          "country_id" : 4,
+          "country_name" : "Algeria",
+          "country_abbr" : "DZ",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "DZA"
+        },
+        {
+          "country_id" : 5,
+          "country_name" : "American Samoa",
+          "country_abbr" : "AS",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "ASM"
+        },
+        {
+          "country_id" : 6,
+          "country_name" : "Andorra",
+          "country_abbr" : "AD",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "AND"
+        },
+        {
+          "country_id" : 7,
+          "country_name" : "Angola",
+          "country_abbr" : "AO",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "AGO"
+        },
+        {
+          "country_id" : 8,
+          "country_name" : "Anguilla",
+          "country_abbr" : "AI",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "AIA"
+        },
+        {
+          "country_id" : 9,
+          "country_name" : "Antarctica",
+          "country_abbr" : "AQ",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "ATA"
+        },
+        {
+          "country_id" : 10,
+          "country_name" : "Antigua and Barbuda",
+          "country_abbr" : "AG",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "ATG"
+        },
+        {
+          "country_id" : 11,
+          "country_name" : "Argentina",
+          "country_abbr" : "AR",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "ARG"
+        },
+        {
+          "country_id" : 12,
+          "country_name" : "Armenia",
+          "country_abbr" : "AM",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "ARM"
+        },
+        {
+          "country_id" : 13,
+          "country_name" : "Aruba",
+          "country_abbr" : "AW",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "ABW"
+        },
+        {
+          "country_id" : 14,
+          "country_name" : "Australia",
+          "country_abbr" : "AU",
+          "weight" : 8,
+          "is_developed" : 1,
+          "country_code" : "AUS"
+        },
+        {
+          "country_id" : 15,
+          "country_name" : "Austria",
+          "country_abbr" : "AT",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "AUT"
+        },
+        {
+          "country_id" : 16,
+          "country_name" : "Azerbaijan",
+          "country_abbr" : "AZ",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "AZE"
+        },
+        {
+          "country_id" : 17,
+          "country_name" : "Bahamas",
+          "country_abbr" : "BS",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "BHS"
+        },
+        {
+          "country_id" : 18,
+          "country_name" : "Bahrain",
+          "country_abbr" : "BH",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "BHR"
+        },
+        {
+          "country_id" : 19,
+          "country_name" : "Bangladesh",
+          "country_abbr" : "BD",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "BGD"
+        },
+        {
+          "country_id" : 20,
+          "country_name" : "Barbados",
+          "country_abbr" : "BB",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "BRB"
+        },
+        {
+          "country_id" : 21,
+          "country_name" : "Belarus",
+          "country_abbr" : "BY",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "BLR"
+        },
+        {
+          "country_id" : 22,
+          "country_name" : "Belgium",
+          "country_abbr" : "BE",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "BEL"
+        },
+        {
+          "country_id" : 23,
+          "country_name" : "Belize",
+          "country_abbr" : "BZ",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "BLZ"
+        },
+        {
+          "country_id" : 24,
+          "country_name" : "Benin",
+          "country_abbr" : "BJ",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "BEN"
+        },
+        {
+          "country_id" : 25,
+          "country_name" : "Bermuda",
+          "country_abbr" : "BM",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "BMU"
+        },
+        {
+          "country_id" : 26,
+          "country_name" : "Bhutan",
+          "country_abbr" : "BT",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "BTN"
+        },
+        {
+          "country_id" : 27,
+          "country_name" : "Bolivia",
+          "country_abbr" : "BO",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "BOL"
+        },
+        {
+          "country_id" : 28,
+          "country_name" : "Bonaire, Sint Eustatius, and Saba",
+          "country_abbr" : "BQ",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "BES"
+        },
+        {
+          "country_id" : 29,
+          "country_name" : "Bosnia and Herzegovina",
+          "country_abbr" : "BA",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "BIH"
+        },
+        {
+          "country_id" : 30,
+          "country_name" : "Botswana",
+          "country_abbr" : "BW",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "BWA"
+        },
+        {
+          "country_id" : 31,
+          "country_name" : "Bouvet Island",
+          "country_abbr" : "BV",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "BVT"
+        },
+        {
+          "country_id" : 32,
+          "country_name" : "Brazil",
+          "country_abbr" : "BR",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "BRA"
+        },
+        {
+          "country_id" : 33,
+          "country_name" : "British Indian Ocean Territory",
+          "country_abbr" : "IO",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "IOT"
+        },
+        {
+          "country_id" : 34,
+          "country_name" : "British Virgin Islands",
+          "country_abbr" : "VG",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "VGB"
+        },
+        {
+          "country_id" : 35,
+          "country_name" : "Brunei",
+          "country_abbr" : "BN",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "BRN"
+        },
+        {
+          "country_id" : 36,
+          "country_name" : "Bulgaria",
+          "country_abbr" : "BG",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "BGR"
+        },
+        {
+          "country_id" : 37,
+          "country_name" : "Burkina Faso",
+          "country_abbr" : "BF",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "BFA"
+        },
+        {
+          "country_id" : 38,
+          "country_name" : "Burundi",
+          "country_abbr" : "BI",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "BDI"
+        },
+        {
+          "country_id" : 39,
+          "country_name" : "Cabo Verde",
+          "country_abbr" : "CV",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "CPV"
+        },
+        {
+          "country_id" : 40,
+          "country_name" : "Cambodia",
+          "country_abbr" : "KH",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "KHM"
+        },
+        {
+          "country_id" : 41,
+          "country_name" : "Cameroon",
+          "country_abbr" : "CM",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "CMR"
+        },
+        {
+          "country_id" : 42,
+          "country_name" : "Canada",
+          "country_abbr" : "CA",
+          "weight" : 9,
+          "is_developed" : 1,
+          "country_code" : "CAN"
+        },
+        {
+          "country_id" : 43,
+          "country_name" : "Cayman Islands",
+          "country_abbr" : "KY",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "CYM"
+        },
+        {
+          "country_id" : 44,
+          "country_name" : "Central African Republic",
+          "country_abbr" : "CF",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "CAF"
+        },
+        {
+          "country_id" : 45,
+          "country_name" : "Chad",
+          "country_abbr" : "TD",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "TCD"
+        },
+        {
+          "country_id" : 46,
+          "country_name" : "Chile",
+          "country_abbr" : "CL",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "CHL"
+        },
+        {
+          "country_id" : 47,
+          "country_name" : "China",
+          "country_abbr" : "CN",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "CHN"
+        },
+        {
+          "country_id" : 48,
+          "country_name" : "Christmas Island",
+          "country_abbr" : "CX",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "CXR"
+        },
+        {
+          "country_id" : 49,
+          "country_name" : "Cocos [Keeling] Islands",
+          "country_abbr" : "CC",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "CCK"
+        },
+        {
+          "country_id" : 50,
+          "country_name" : "Colombia",
+          "country_abbr" : "CO",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "COL"
+        },
+        {
+          "country_id" : 51,
+          "country_name" : "Comoros",
+          "country_abbr" : "KM",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "COM"
+        },
+        {
+          "country_id" : 52,
+          "country_name" : "Congo",
+          "country_abbr" : "CD",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "COG"
+        },
+        {
+          "country_id" : 53,
+          "country_name" : "Cook Islands",
+          "country_abbr" : "CK",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "COK"
+        },
+        {
+          "country_id" : 54,
+          "country_name" : "Costa Rica",
+          "country_abbr" : "CR",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "CRI"
+        },
+        {
+          "country_id" : 55,
+          "country_name" : "Croatia",
+          "country_abbr" : "HR",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "HRV"
+        },
+        {
+          "country_id" : 56,
+          "country_name" : "Cuba",
+          "country_abbr" : "CU",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "CUB"
+        },
+        {
+          "country_id" : 57,
+          "country_name" : "Curaçao",
+          "country_abbr" : "CW",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "CUW"
+        },
+        {
+          "country_id" : 58,
+          "country_name" : "Cyprus",
+          "country_abbr" : "CY",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "CYP"
+        },
+        {
+          "country_id" : 59,
+          "country_name" : "Czechia",
+          "country_abbr" : "CZ",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "CZE"
+        },
+        {
+          "country_id" : 60,
+          "country_name" : "Democratic Republic of Timor-Leste",
+          "country_abbr" : "TL",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "TLS"
+        },
+        {
+          "country_id" : 61,
+          "country_name" : "Denmark",
+          "country_abbr" : "DK",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "DNK"
+        },
+        {
+          "country_id" : 62,
+          "country_name" : "Djibouti",
+          "country_abbr" : "DJ",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "DJI"
+        },
+        {
+          "country_id" : 63,
+          "country_name" : "Dominica",
+          "country_abbr" : "DM",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "DMA"
+        },
+        {
+          "country_id" : 64,
+          "country_name" : "Dominican Republic",
+          "country_abbr" : "DO",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "DOM"
+        },
+        {
+          "country_id" : 65,
+          "country_name" : "Ecuador",
+          "country_abbr" : "EC",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "ECU"
+        },
+        {
+          "country_id" : 66,
+          "country_name" : "Egypt",
+          "country_abbr" : "EG",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "EGY"
+        },
+        {
+          "country_id" : 67,
+          "country_name" : "El Salvador",
+          "country_abbr" : "SV",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "SLV"
+        },
+        {
+          "country_id" : 68,
+          "country_name" : "Equatorial Guinea",
+          "country_abbr" : "GQ",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "GNQ"
+        },
+        {
+          "country_id" : 69,
+          "country_name" : "Eritrea",
+          "country_abbr" : "ER",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "ERI"
+        },
+        {
+          "country_id" : 70,
+          "country_name" : "Estonia",
+          "country_abbr" : "EE",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "EST"
+        },
+        {
+          "country_id" : 71,
+          "country_name" : "Eswatini",
+          "country_abbr" : "SZ",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "SWZ"
+        },
+        {
+          "country_id" : 72,
+          "country_name" : "Ethiopia",
+          "country_abbr" : "ET",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "ETH"
+        },
+        {
+          "country_id" : 73,
+          "country_name" : "Falkland Islands",
+          "country_abbr" : "FK",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "FLK"
+        },
+        {
+          "country_id" : 74,
+          "country_name" : "Faroe Islands",
+          "country_abbr" : "FO",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "FRO"
+        },
+        {
+          "country_id" : 75,
+          "country_name" : "Federated States of Micronesia",
+          "country_abbr" : "FM",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "FSM"
+        },
+        {
+          "country_id" : 76,
+          "country_name" : "Fiji",
+          "country_abbr" : "FJ",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "FJI"
+        },
+        {
+          "country_id" : 77,
+          "country_name" : "Finland",
+          "country_abbr" : "FI",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "FIN"
+        },
+        {
+          "country_id" : 78,
+          "country_name" : "France",
+          "country_abbr" : "FR",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "FRA"
+        },
+        {
+          "country_id" : 79,
+          "country_name" : "French Guiana",
+          "country_abbr" : "GF",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "GUF"
+        },
+        {
+          "country_id" : 80,
+          "country_name" : "French Polynesia",
+          "country_abbr" : "PF",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "PYF"
+        },
+        {
+          "country_id" : 81,
+          "country_name" : "French Southern Territories",
+          "country_abbr" : "TF",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "ATF"
+        },
+        {
+          "country_id" : 82,
+          "country_name" : "Gabon",
+          "country_abbr" : "GA",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "GAB"
+        },
+        {
+          "country_id" : 83,
+          "country_name" : "Gambia",
+          "country_abbr" : "GM",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "GMB"
+        },
+        {
+          "country_id" : 84,
+          "country_name" : "Georgia",
+          "country_abbr" : "GE",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "GEO"
+        },
+        {
+          "country_id" : 85,
+          "country_name" : "Germany",
+          "country_abbr" : "DE",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "DEU"
+        },
+        {
+          "country_id" : 86,
+          "country_name" : "Ghana",
+          "country_abbr" : "GH",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "GHA"
+        },
+        {
+          "country_id" : 87,
+          "country_name" : "Gibraltar",
+          "country_abbr" : "GI",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "GIB"
+        },
+        {
+          "country_id" : 88,
+          "country_name" : "Greece",
+          "country_abbr" : "GR",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "GRC"
+        },
+        {
+          "country_id" : 89,
+          "country_name" : "Greenland",
+          "country_abbr" : "GL",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "GRL"
+        },
+        {
+          "country_id" : 90,
+          "country_name" : "Grenada",
+          "country_abbr" : "GD",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "GRD"
+        },
+        {
+          "country_id" : 91,
+          "country_name" : "Guadeloupe",
+          "country_abbr" : "GP",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "GLP"
+        },
+        {
+          "country_id" : 92,
+          "country_name" : "Guam",
+          "country_abbr" : "GU",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "GUM"
+        },
+        {
+          "country_id" : 93,
+          "country_name" : "Guatemala",
+          "country_abbr" : "GT",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "GTM"
+        },
+        {
+          "country_id" : 94,
+          "country_name" : "Guernsey",
+          "country_abbr" : "GG",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "GGY"
+        },
+        {
+          "country_id" : 95,
+          "country_name" : "Guinea",
+          "country_abbr" : "GN",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "GIN"
+        },
+        {
+          "country_id" : 96,
+          "country_name" : "Guinea-Bissau",
+          "country_abbr" : "GW",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "GNB"
+        },
+        {
+          "country_id" : 97,
+          "country_name" : "Guyana",
+          "country_abbr" : "GY",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "GUY"
+        },
+        {
+          "country_id" : 98,
+          "country_name" : "Haiti",
+          "country_abbr" : "HT",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "HTI"
+        },
+        {
+          "country_id" : 99,
+          "country_name" : "Hashemite Kingdom of Jordan",
+          "country_abbr" : "JO",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "JOR"
+        },
+        {
+          "country_id" : 100,
+          "country_name" : "Heard Island and McDonald Islands",
+          "country_abbr" : "HM",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "HMD"
+        },
+        {
+          "country_id" : 101,
+          "country_name" : "Honduras",
+          "country_abbr" : "HN",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "HND"
+        },
+        {
+          "country_id" : 102,
+          "country_name" : "Hong Kong",
+          "country_abbr" : "HK",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "HKG"
+        },
+        {
+          "country_id" : 103,
+          "country_name" : "Hungary",
+          "country_abbr" : "HU",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "HUN"
+        },
+        {
+          "country_id" : 104,
+          "country_name" : "Iceland",
+          "country_abbr" : "IS",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "ISL"
+        },
+        {
+          "country_id" : 105,
+          "country_name" : "India",
+          "country_abbr" : "IN",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "IND"
+        },
+        {
+          "country_id" : 106,
+          "country_name" : "Indonesia",
+          "country_abbr" : "ID",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "IDN"
+        },
+        {
+          "country_id" : 107,
+          "country_name" : "Iran",
+          "country_abbr" : "IR",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "IRN"
+        },
+        {
+          "country_id" : 108,
+          "country_name" : "Iraq",
+          "country_abbr" : "IQ",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "IRQ"
+        },
+        {
+          "country_id" : 109,
+          "country_name" : "Ireland",
+          "country_abbr" : "IE",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "IRL"
+        },
+        {
+          "country_id" : 110,
+          "country_name" : "Isle of Man",
+          "country_abbr" : "IM",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "IMN"
+        },
+        {
+          "country_id" : 111,
+          "country_name" : "Israel",
+          "country_abbr" : "IL",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "ISR"
+        },
+        {
+          "country_id" : 112,
+          "country_name" : "Italy",
+          "country_abbr" : "IT",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "ITA"
+        },
+        {
+          "country_id" : 113,
+          "country_name" : "Ivory Coast",
+          "country_abbr" : "CI",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "CIV"
+        },
+        {
+          "country_id" : 114,
+          "country_name" : "Jamaica",
+          "country_abbr" : "JM",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "JAM"
+        },
+        {
+          "country_id" : 115,
+          "country_name" : "Japan",
+          "country_abbr" : "JP",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "JPN"
+        },
+        {
+          "country_id" : 116,
+          "country_name" : "Jersey",
+          "country_abbr" : "JE",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "JEY"
+        },
+        {
+          "country_id" : 117,
+          "country_name" : "Kazakhstan",
+          "country_abbr" : "KZ",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "KAZ"
+        },
+        {
+          "country_id" : 118,
+          "country_name" : "Kenya",
+          "country_abbr" : "KE",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "KEN"
+        },
+        {
+          "country_id" : 119,
+          "country_name" : "Kiribati",
+          "country_abbr" : "KI",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "KIR"
+        },
+        {
+          "country_id" : 120,
+          "country_name" : "Kosovo",
+          "country_abbr" : "XK",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "KOS"
+        },
+        {
+          "country_id" : 121,
+          "country_name" : "Kuwait",
+          "country_abbr" : "KW",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "KWT"
+        },
+        {
+          "country_id" : 122,
+          "country_name" : "Kyrgyzstan",
+          "country_abbr" : "KG",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "KGZ"
+        },
+        {
+          "country_id" : 123,
+          "country_name" : "Laos",
+          "country_abbr" : "LA",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "LAO"
+        },
+        {
+          "country_id" : 124,
+          "country_name" : "Latvia",
+          "country_abbr" : "LV",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "LVA"
+        },
+        {
+          "country_id" : 125,
+          "country_name" : "Lebanon",
+          "country_abbr" : "LB",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "LBN"
+        },
+        {
+          "country_id" : 126,
+          "country_name" : "Lesotho",
+          "country_abbr" : "LS",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "LSO"
+        },
+        {
+          "country_id" : 127,
+          "country_name" : "Liberia",
+          "country_abbr" : "LR",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "LBR"
+        },
+        {
+          "country_id" : 128,
+          "country_name" : "Libya",
+          "country_abbr" : "LY",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "LBY"
+        },
+        {
+          "country_id" : 129,
+          "country_name" : "Liechtenstein",
+          "country_abbr" : "LI",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "LIE"
+        },
+        {
+          "country_id" : 130,
+          "country_name" : "Luxembourg",
+          "country_abbr" : "LU",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "LUX"
+        },
+        {
+          "country_id" : 131,
+          "country_name" : "Macao",
+          "country_abbr" : "MO",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "MAC"
+        },
+        {
+          "country_id" : 132,
+          "country_name" : "Madagascar",
+          "country_abbr" : "MG",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "MDG"
+        },
+        {
+          "country_id" : 133,
+          "country_name" : "Malawi",
+          "country_abbr" : "MW",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "MWI"
+        },
+        {
+          "country_id" : 134,
+          "country_name" : "Malaysia",
+          "country_abbr" : "MY",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "MYS"
+        },
+        {
+          "country_id" : 135,
+          "country_name" : "Maldives",
+          "country_abbr" : "MV",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "MDV"
+        },
+        {
+          "country_id" : 136,
+          "country_name" : "Mali",
+          "country_abbr" : "ML",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "MLI"
+        },
+        {
+          "country_id" : 137,
+          "country_name" : "Malta",
+          "country_abbr" : "MT",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "MLT"
+        },
+        {
+          "country_id" : 138,
+          "country_name" : "Marshall Islands",
+          "country_abbr" : "MH",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "MHL"
+        },
+        {
+          "country_id" : 139,
+          "country_name" : "Martinique",
+          "country_abbr" : "MQ",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "MTQ"
+        },
+        {
+          "country_id" : 140,
+          "country_name" : "Mauritania",
+          "country_abbr" : "MR",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "MRT"
+        },
+        {
+          "country_id" : 141,
+          "country_name" : "Mauritius",
+          "country_abbr" : "MU",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "MUS"
+        },
+        {
+          "country_id" : 142,
+          "country_name" : "Mayotte",
+          "country_abbr" : "YT",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "MYT"
+        },
+        {
+          "country_id" : 143,
+          "country_name" : "Mexico",
+          "country_abbr" : "MX",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "MEX"
+        },
+        {
+          "country_id" : 144,
+          "country_name" : "Monaco",
+          "country_abbr" : "MC",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "MCO"
+        },
+        {
+          "country_id" : 145,
+          "country_name" : "Mongolia",
+          "country_abbr" : "MN",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "MNG"
+        },
+        {
+          "country_id" : 146,
+          "country_name" : "Montenegro",
+          "country_abbr" : "ME",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "MNE"
+        },
+        {
+          "country_id" : 147,
+          "country_name" : "Montserrat",
+          "country_abbr" : "MS",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "MSR"
+        },
+        {
+          "country_id" : 148,
+          "country_name" : "Morocco",
+          "country_abbr" : "MA",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "MAR"
+        },
+        {
+          "country_id" : 149,
+          "country_name" : "Mozambique",
+          "country_abbr" : "MZ",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "MOZ"
+        },
+        {
+          "country_id" : 150,
+          "country_name" : "Myanmar",
+          "country_abbr" : "MM",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "MMR"
+        },
+        {
+          "country_id" : 151,
+          "country_name" : "Namibia",
+          "country_abbr" : "NA",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "NAM"
+        },
+        {
+          "country_id" : 152,
+          "country_name" : "Nauru",
+          "country_abbr" : "NR",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "NRU"
+        },
+        {
+          "country_id" : 153,
+          "country_name" : "Nepal",
+          "country_abbr" : "NP",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "NPL"
+        },
+        {
+          "country_id" : 154,
+          "country_name" : "Netherlands",
+          "country_abbr" : "NL",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "NLD"
+        },
+        {
+          "country_id" : 155,
+          "country_name" : "New Caledonia",
+          "country_abbr" : "NC",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "NCL"
+        },
+        {
+          "country_id" : 156,
+          "country_name" : "New Zealand",
+          "country_abbr" : "NZ",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "NZL"
+        },
+        {
+          "country_id" : 157,
+          "country_name" : "Nicaragua",
+          "country_abbr" : "NI",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "NIC"
+        },
+        {
+          "country_id" : 158,
+          "country_name" : "Niger",
+          "country_abbr" : "NE",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "NER"
+        },
+        {
+          "country_id" : 159,
+          "country_name" : "Nigeria",
+          "country_abbr" : "NG",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "NGA"
+        },
+        {
+          "country_id" : 160,
+          "country_name" : "Niue",
+          "country_abbr" : "NU",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "NIU"
+        },
+        {
+          "country_id" : 161,
+          "country_name" : "Norfolk Island",
+          "country_abbr" : "NF",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "NFK"
+        },
+        {
+          "country_id" : 162,
+          "country_name" : "Northern Mariana Islands",
+          "country_abbr" : "MP",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "MNP"
+        },
+        {
+          "country_id" : 163,
+          "country_name" : "North Korea",
+          "country_abbr" : "KP",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "PRK"
+        },
+        {
+          "country_id" : 164,
+          "country_name" : "North Macedonia",
+          "country_abbr" : "MK",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "MKD"
+        },
+        {
+          "country_id" : 165,
+          "country_name" : "Norway",
+          "country_abbr" : "NO",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "NOR"
+        },
+        {
+          "country_id" : 166,
+          "country_name" : "Oman",
+          "country_abbr" : "OM",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "OMN"
+        },
+        {
+          "country_id" : 167,
+          "country_name" : "Pakistan",
+          "country_abbr" : "PK",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "PAK"
+        },
+        {
+          "country_id" : 168,
+          "country_name" : "Palau",
+          "country_abbr" : "PW",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "PLW"
+        },
+        {
+          "country_id" : 169,
+          "country_name" : "Palestine",
+          "country_abbr" : "PS",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "PLE"
+        },
+        {
+          "country_id" : 170,
+          "country_name" : "Panama",
+          "country_abbr" : "PA",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "PAN"
+        },
+        {
+          "country_id" : 171,
+          "country_name" : "Papua New Guinea",
+          "country_abbr" : "PG",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "PNG"
+        },
+        {
+          "country_id" : 172,
+          "country_name" : "Paraguay",
+          "country_abbr" : "PY",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "PRY"
+        },
+        {
+          "country_id" : 173,
+          "country_name" : "Peru",
+          "country_abbr" : "PE",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "PER"
+        },
+        {
+          "country_id" : 174,
+          "country_name" : "Philippines",
+          "country_abbr" : "PH",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "PHL"
+        },
+        {
+          "country_id" : 175,
+          "country_name" : "Pitcairn Islands",
+          "country_abbr" : "PN",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "PCN"
+        },
+        {
+          "country_id" : 176,
+          "country_name" : "Poland",
+          "country_abbr" : "PL",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "POL"
+        },
+        {
+          "country_id" : 177,
+          "country_name" : "Portugal",
+          "country_abbr" : "PT",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "PRT"
+        },
+        {
+          "country_id" : 178,
+          "country_name" : "Puerto Rico",
+          "country_abbr" : "PR",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "PRI"
+        },
+        {
+          "country_id" : 179,
+          "country_name" : "Qatar",
+          "country_abbr" : "QA",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "QAT"
+        },
+        {
+          "country_id" : 180,
+          "country_name" : "Republic of Lithuania",
+          "country_abbr" : "LT",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "LTU"
+        },
+        {
+          "country_id" : 181,
+          "country_name" : "Republic of Moldova",
+          "country_abbr" : "MD",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "MDA"
+        },
+        {
+          "country_id" : 182,
+          "country_name" : "Republic of the Congo",
+          "country_abbr" : "CG",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "COD"
+        },
+        {
+          "country_id" : 183,
+          "country_name" : "Réunion",
+          "country_abbr" : "RE",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "REU"
+        },
+        {
+          "country_id" : 184,
+          "country_name" : "Romania",
+          "country_abbr" : "RO",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "ROU"
+        },
+        {
+          "country_id" : 185,
+          "country_name" : "Russia",
+          "country_abbr" : "RU",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "RUS"
+        },
+        {
+          "country_id" : 186,
+          "country_name" : "Rwanda",
+          "country_abbr" : "RW",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "RWA"
+        },
+        {
+          "country_id" : 187,
+          "country_name" : "Saint Barthélemy",
+          "country_abbr" : "BL",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "BLM"
+        },
+        {
+          "country_id" : 188,
+          "country_name" : "Saint Helena",
+          "country_abbr" : "SH",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "SHM"
+        },
+        {
+          "country_id" : 189,
+          "country_name" : "Saint Lucia",
+          "country_abbr" : "LC",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "LCA"
+        },
+        {
+          "country_id" : 190,
+          "country_name" : "Saint Martin",
+          "country_abbr" : "MF",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "MAF"
+        },
+        {
+          "country_id" : 191,
+          "country_name" : "Saint Pierre and Miquelon",
+          "country_abbr" : "PM",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "SPM"
+        },
+        {
+          "country_id" : 192,
+          "country_name" : "Saint Vincent and the Grenadines",
+          "country_abbr" : "VC",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "VCT"
+        },
+        {
+          "country_id" : 193,
+          "country_name" : "Samoa",
+          "country_abbr" : "WS",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "WSM"
+        },
+        {
+          "country_id" : 194,
+          "country_name" : "San Marino",
+          "country_abbr" : "SM",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "SMR"
+        },
+        {
+          "country_id" : 195,
+          "country_name" : "São Tomé and Príncipe",
+          "country_abbr" : "ST",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "STP"
+        },
+        {
+          "country_id" : 196,
+          "country_name" : "Saudi Arabia",
+          "country_abbr" : "SA",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "SAU"
+        },
+        {
+          "country_id" : 197,
+          "country_name" : "Senegal",
+          "country_abbr" : "SN",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "SEN"
+        },
+        {
+          "country_id" : 198,
+          "country_name" : "Serbia",
+          "country_abbr" : "RS",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "SRB"
+        },
+        {
+          "country_id" : 199,
+          "country_name" : "Seychelles",
+          "country_abbr" : "SC",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "SYC"
+        },
+        {
+          "country_id" : 200,
+          "country_name" : "Sierra Leone",
+          "country_abbr" : "SL",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "SLE"
+        },
+        {
+          "country_id" : 201,
+          "country_name" : "Singapore",
+          "country_abbr" : "SG",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "SGP"
+        },
+        {
+          "country_id" : 202,
+          "country_name" : "Sint Maarten",
+          "country_abbr" : "SX",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "SXM"
+        },
+        {
+          "country_id" : 203,
+          "country_name" : "Slovakia",
+          "country_abbr" : "SK",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "SVK"
+        },
+        {
+          "country_id" : 204,
+          "country_name" : "Slovenia",
+          "country_abbr" : "SI",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "SVN"
+        },
+        {
+          "country_id" : 205,
+          "country_name" : "Solomon Islands",
+          "country_abbr" : "SB",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "SLB"
+        },
+        {
+          "country_id" : 206,
+          "country_name" : "Somalia",
+          "country_abbr" : "SO",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "SOM"
+        },
+        {
+          "country_id" : 207,
+          "country_name" : "South Africa",
+          "country_abbr" : "ZA",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "ZAF"
+        },
+        {
+          "country_id" : 208,
+          "country_name" : "South Georgia and the South Sandwich Islands",
+          "country_abbr" : "GS",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "SGS"
+        },
+        {
+          "country_id" : 209,
+          "country_name" : "South Korea",
+          "country_abbr" : "KR",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "KOR"
+        },
+        {
+          "country_id" : 210,
+          "country_name" : "South Sudan",
+          "country_abbr" : "SS",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "SSD"
+        },
+        {
+          "country_id" : 211,
+          "country_name" : "Spain",
+          "country_abbr" : "ES",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "ESP"
+        },
+        {
+          "country_id" : 212,
+          "country_name" : "Sri Lanka",
+          "country_abbr" : "LK",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "LKA"
+        },
+        {
+          "country_id" : 213,
+          "country_name" : "St Kitts and Nevis",
+          "country_abbr" : "KN",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "KNA"
+        },
+        {
+          "country_id" : 214,
+          "country_name" : "Sudan",
+          "country_abbr" : "SD",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "SDN"
+        },
+        {
+          "country_id" : 215,
+          "country_name" : "Suriname",
+          "country_abbr" : "SR",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "SUR"
+        },
+        {
+          "country_id" : 216,
+          "country_name" : "Svalbard and Jan Mayen",
+          "country_abbr" : "SJ",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "SJM"
+        },
+        {
+          "country_id" : 217,
+          "country_name" : "Sweden",
+          "country_abbr" : "SE",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "SWE"
+        },
+        {
+          "country_id" : 218,
+          "country_name" : "Switzerland",
+          "country_abbr" : "CH",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "CHE"
+        },
+        {
+          "country_id" : 219,
+          "country_name" : "Syria",
+          "country_abbr" : "SY",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "SYR"
+        },
+        {
+          "country_id" : 220,
+          "country_name" : "Taiwan",
+          "country_abbr" : "TW",
+          "weight" : 0,
+          "is_developed" : 1,
+          "country_code" : "TWN"
+        },
+        {
+          "country_id" : 221,
+          "country_name" : "Tajikistan",
+          "country_abbr" : "TJ",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "TJK"
+        },
+        {
+          "country_id" : 222,
+          "country_name" : "Tanzania",
+          "country_abbr" : "TZ",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "TZA"
+        },
+        {
+          "country_id" : 223,
+          "country_name" : "Thailand",
+          "country_abbr" : "TH",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "THA"
+        },
+        {
+          "country_id" : 224,
+          "country_name" : "Togo",
+          "country_abbr" : "TG",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "TGO"
+        },
+        {
+          "country_id" : 225,
+          "country_name" : "Tokelau",
+          "country_abbr" : "TK",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "TKL"
+        },
+        {
+          "country_id" : 226,
+          "country_name" : "Tonga",
+          "country_abbr" : "TO",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "TON"
+        },
+        {
+          "country_id" : 227,
+          "country_name" : "Trinidad and Tobago",
+          "country_abbr" : "TT",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "TTO"
+        },
+        {
+          "country_id" : 228,
+          "country_name" : "Tunisia",
+          "country_abbr" : "TN",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "TUN"
+        },
+        {
+          "country_id" : 229,
+          "country_name" : "Turkey",
+          "country_abbr" : "TR",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "TUR"
+        },
+        {
+          "country_id" : 230,
+          "country_name" : "Turkmenistan",
+          "country_abbr" : "TM",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "TKM"
+        },
+        {
+          "country_id" : 231,
+          "country_name" : "Turks and Caicos Islands",
+          "country_abbr" : "TC",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "TCA"
+        },
+        {
+          "country_id" : 232,
+          "country_name" : "Tuvalu",
+          "country_abbr" : "TV",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "TUV"
+        },
+        {
+          "country_id" : 233,
+          "country_name" : "Uganda",
+          "country_abbr" : "UG",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "UGA"
+        },
+        {
+          "country_id" : 234,
+          "country_name" : "Ukraine",
+          "country_abbr" : "UA",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "UKR"
+        },
+        {
+          "country_id" : 235,
+          "country_name" : "United Arab Emirates",
+          "country_abbr" : "AE",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "ARE"
+        },
+        {
+          "country_id" : 236,
+          "country_name" : "United Kingdom",
+          "country_abbr" : "GB",
+          "weight" : 7,
+          "is_developed" : 1,
+          "country_code" : "GBR"
+        },
+        {
+          "country_id" : 237,
+          "country_name" : "United States",
+          "country_abbr" : "US",
+          "weight" : 10,
+          "is_developed" : 1,
+          "country_code" : "USA"
+        },
+        {
+          "country_id" : 238,
+          "country_name" : "Uruguay",
+          "country_abbr" : "UY",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "URY"
+        },
+        {
+          "country_id" : 239,
+          "country_name" : "U.S. Minor Outlying Islands",
+          "country_abbr" : "UM",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "UMI"
+        },
+        {
+          "country_id" : 240,
+          "country_name" : "U.S. Virgin Islands",
+          "country_abbr" : "VI",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "VIR"
+        },
+        {
+          "country_id" : 241,
+          "country_name" : "Uzbekistan",
+          "country_abbr" : "UZ",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "UZB"
+        },
+        {
+          "country_id" : 242,
+          "country_name" : "Vanuatu",
+          "country_abbr" : "VU",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "VUT"
+        },
+        {
+          "country_id" : 243,
+          "country_name" : "Vatican City",
+          "country_abbr" : "VA",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "VAT"
+        },
+        {
+          "country_id" : 244,
+          "country_name" : "Venezuela",
+          "country_abbr" : "VE",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "VEN"
+        },
+        {
+          "country_id" : 245,
+          "country_name" : "Vietnam",
+          "country_abbr" : "VN",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "VNM"
+        },
+        {
+          "country_id" : 246,
+          "country_name" : "Wallis and Futuna",
+          "country_abbr" : "WF",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "WLF"
+        },
+        {
+          "country_id" : 247,
+          "country_name" : "Western Sahara",
+          "country_abbr" : "EH",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "ESH"
+        },
+        {
+          "country_id" : 248,
+          "country_name" : "Yemen",
+          "country_abbr" : "YE",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "YEM"
+        },
+        {
+          "country_id" : 249,
+          "country_name" : "Zambia",
+          "country_abbr" : "ZM",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "ZMB"
+        },
+        {
+          "country_id" : 250,
+          "country_name" : "Zimbabwe",
+          "country_abbr" : "ZW",
+          "weight" : 0,
+          "is_developed" : 0,
+          "country_code" : "ZWE"
+        }
+      ]
+    }
+  ]
+}

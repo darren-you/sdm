@@ -3,8 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:sdm/business/account/sign_up/basic_info_controller.dart';
+import 'package:sdm/components/view/custom_bottom_sheet.dart';
+import 'package:sdm/location/location_util.dart';
+import 'package:sdm/services/app_init_service.dart';
 
+import '../../../components/input/custom_bottom_sheet_picker.dart';
 import '../../../components/input/custom_edit_normal.dart';
+import '../../../components/input/location_picker.dart';
 import '../../../components/view/custom_body.dart';
 import '../../../enumm/color_enum.dart';
 import '../../../utils/assert_util.dart';
@@ -89,18 +94,39 @@ Widget _inputUserInfo(BuildContext context, BasicInfoController controller) {
                 ),
               ),
               SizedBox(height: 28.h),
-              CustomEditNormal(
-                editController: controller.locationController,
-                height: 48.h,
-                backgroundColor: MyColors.inputiHintBackgrounfColor.color,
-                borderRadius: BorderRadius.circular(44.r),
-                leftIcon: SvgPicture.asset(AssertUtil.iconPassword),
-                hintText: 'Location',
-                hintStyle: TextStyle(
-                  fontSize: 18.sp,
-                  color: MyColors.inputiHintColor.color,
+              // CustomEditNormal(
+              //   editController: controller.locationController,
+              //   height: 48.h,
+              //   backgroundColor: MyColors.inputiHintBackgrounfColor.color,
+              //   borderRadius: BorderRadius.circular(44.r),
+              //   leftIcon: SvgPicture.asset(AssertUtil.iconPassword),
+              //   hintText: 'Location',
+              //   hintStyle: TextStyle(
+              //     fontSize: 18.sp,
+              //     color: MyColors.inputiHintColor.color,
+              //   ),
+              // ),
+              GestureDetector(
+                onTap: () {
+                  showMyBottomSheet(
+                    context,
+                    showChild: LocationPicker(
+                      title: 'Location',
+                      confirmCallback: (countryDTO, stateDTO, cityDTO) {
+                        final coutryName = countryDTO?.countryName;
+                        final stateName = stateDTO?.stateName;
+                        final cityName = cityDTO?.cityName;
+                        logger.d('Location: $coutryName $stateName $cityName');
+                      },
+                    ),
+                  );
+                },
+                child: Container(
+                  height: 50,
+                  color: Colors.blue,
                 ),
               ),
+
               SizedBox(height: 24.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

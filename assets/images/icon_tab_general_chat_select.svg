@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="37px" height="38px" viewBox="0 0 37 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon_General_Chat</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="voicematch" transform="translate(-288.000000, -761.000000)">
+            <g id="编组-6" transform="translate(0.000000, 725.000000)">
+                <g id="Icon_General_Chat" transform="translate(288.000000, 36.499775)">
+                    <g id="Icon/general/chat_list" transform="translate(0.500000, 0.500000)">
+                        <g id="编组-2" transform="translate(3.000000, 3.000000)">
+                            <path d="M4.30563845,25.0943497 C1.54458562,22.3404552 -0.00495947181,18.5996449 2.00728323e-13,14.6999881 C2.00728323e-13,6.58118468 6.58119661,2.11386464e-13 14.7,2.11386464e-13 C22.8188035,2.11386464e-13 29.3999881,6.58118468 29.3999881,14.6999881 C29.3999881,22.8187915 22.8188035,29.3999762 14.7,29.3999762 L3.54890089,29.3999762 C2.7370423,29.3999762 2.07890089,28.7418348 2.07890089,27.9299762 C2.07890089,27.5401073 2.233776,27.1662064 2.50945536,26.8905278 L4.30563845,25.0943497 L4.30563845,25.0943497 Z" id="路径" fill="#DD73EC" fill-rule="nonzero"></path>
+                            <path d="M10.7778001,17.83174 C11.1146298,19.6920947 12.7425427,21.1030416 14.7,21.1030416 C16.6638457,21.1030416 18.2959926,19.6828701 18.6254565,17.8135113" id="形状" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

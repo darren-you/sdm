@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="49px" viewBox="0 0 50 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon_man</title>
+    <defs>
+        <path d="M18.5153002,0.800996868 C17.2688002,0.598496868 14.8133002,-0.243003132 12.2918002,0.773996868 L12.2918002,0.773996868 C8.72180017,2.21849687 7.86530017,5.54699687 4.95830017,6.61799687 L4.95830017,6.61799687 C2.60180017,7.48649687 0.0863001703,6.11249687 0.0863001703,6.11249687 L0.0863001703,6.11249687 C0.84980017,16.5494969 12.7748002,14.9849969 16.4123002,11.3639969 L16.4123002,11.3639969 C17.4008002,10.3814969 18.0653002,9.11849687 18.5213002,7.79399687 L18.5213002,7.79399687 C18.9713002,9.11849687 19.6418002,10.3814969 20.6303002,11.3639969 L20.6303002,11.3639969 C24.2663002,14.9789969 36.1928002,16.5494969 36.9563002,6.11249687 L36.9563002,6.11249687 C36.9458002,6.11249687 34.4303002,7.48649687 32.0738002,6.61799687 L32.0738002,6.61799687 C29.1623002,5.54699687 28.3088002,2.21849687 24.7403002,0.773996868 L24.7403002,0.773996868 C23.8283002,0.406496868 22.9268002,0.280496868 22.0868002,0.280496868 L22.0868002,0.280496868 C20.6018002,0.280496868 19.3118002,0.670496868 18.5153002,0.800996868 L18.5153002,0.800996868 Z" id="path-1"></path>
+        <filter x="-24.4%" y="-65.1%" width="148.8%" height="230.2%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.118635271 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="voicematch" transform="translate(-19.000000, -324.000000)">
+            <g id="编组-9" transform="translate(16.000000, 311.500000)">
+                <g id="icon_man" transform="translate(4.000000, 13.000000)">
+                    <g id="编组" transform="translate(5.642857, 16.892857)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-2">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
+                            <use fill="#D4D6D8" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
