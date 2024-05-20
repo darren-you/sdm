@@ -1,11 +1,15 @@
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:sdm/location/dto/city_dto.dart';
 import 'package:sdm/location/dto/countries_dto.dart';
 import 'package:sdm/location/dto/states_dto.dart';
 import 'package:sdm/services/app_init_service.dart';
 import 'package:sdm/utils/assert_util.dart';
+
+import '../components/view/we_chat_loading.dart';
 
 class LocationUtil {
   late final List<CountryDTO>? _countriesList;
@@ -13,9 +17,9 @@ class LocationUtil {
   late final List<CityDTO>? _citiesList;
   bool _haveInit = false;
 
-  static final LocationUtil _locationUtil = LocationUtil._internal();
+  static final LocationUtil _locationUtil = LocationUtil._();
 
-  LocationUtil._internal();
+  LocationUtil._();
 
   factory LocationUtil() {
     return _locationUtil;
@@ -69,10 +73,22 @@ class LocationUtil {
 
   Future<void> initLocationData() async {
     if (!_haveInit) {
+      SmartDialog.show(
+        backDismiss: false,
+        clickMaskDismiss: false,
+        maskColor: Colors.transparent,
+        useAnimation: false,
+        builder: (BuildContext context) {
+          return const CircleLoadingIndicator();
+        },
+      );
+
       _countriesList = await _getCountriesList();
       _statesList = await _getStatesList();
       _citiesList = await _getCitiesList();
       _haveInit = true;
+
+      SmartDialog.dismiss();
     }
   }
 
@@ -148,5 +164,42 @@ class LocationUtil {
     }
 
     return convertList;
+  }
+
+  /// 获取Country的index
+  int getCountryIndex(CountryDTO? countryDTO) {
+    int selectCountryIndex = 0;
+    if (countryDTO != null) {
+      selectCountryIndex = _countriesList!.indexOf(countryDTO);
+    }
+    return selectCountryIndex;
+  }
+
+  /// 获取State的index
+  int getStateIndex(CountryDTO? countryDTO, StateDTO? stateDTO) {
+    int selectStateIndex = 0;
+    if (countryDTO != null) {
+      final stateList = filterStatesByCountryId(countryDTO.countryId);
+      if (stateList.isNotEmpty && stateDTO != null) {
+        selectStateIndex = stateList.indexOf(stateDTO);
+      }
+    }
+
+    return selectStateIndex;
+  }
+
+  /// 获取City的index
+  int getCityIndex(
+      CountryDTO? countryDTO, StateDTO? stateDTO, CityDTO? cityDTO) {
+    int selectCityIndex = 0;
+    if (countryDTO != null) {
+      final stateList = filterStatesByCountryId(countryDTO.countryId);
+      if (stateList.isNotEmpty && stateDTO != null && cityDTO != null) {
+        final cityList = filterCitiesByStateId(stateDTO.stateId);
+        return cityList.isNotEmpty ? cityList.indexOf(cityDTO) : 0;
+      }
+    }
+
+    return selectCityIndex;
   }
 }

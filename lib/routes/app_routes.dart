@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 import 'package:sdm/business/account/sign_up/basic_info_controller.dart';
 import 'package:sdm/business/account/sign_up/basic_info_page.dart';
+import 'package:sdm/business/account/sign_up/cover_page.dart';
+import 'package:sdm/business/account/sign_up/cover_page_controller.dart';
 import 'package:sdm/business/login/login_page.dart';
 import 'package:sdm/business/login/login_page_controller.dart';
 import 'package:sdm/business/account/sign_in/signin_page.dart';
@@ -54,6 +56,17 @@ class AppPages {
       binding: BindingsBuilder(
         () {
           Get.lazyPut(() => BasicInfoController());
+        },
+      ),
+    ),
+
+    /// 选择头像
+    GetPage(
+      name: RoutesPath.coverPage,
+      page: () => const CoverPage(),
+      binding: BindingsBuilder(
+        () {
+          Get.lazyPut(() => CoverPageController());
         },
       ),
     ),

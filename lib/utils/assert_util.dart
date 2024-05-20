@@ -46,6 +46,7 @@ class AssertUtil {
   static const String iconTitleBack = "assets/images/icon_title_back.svg";
   static const String bgSigninEmail = "assets/images/bg_email.svg";
   static const String bgBasicInfo = "assets/images/bg_basic.svg";
+  static const String bgCover = "assets/images/bg_cover.svg";
   static const String iconEmail = "assets/images/icon_email.svg";
   static const String iconPassword = "assets/images/icon_password.svg";
   static const String iconSee = "assets/images/icon_see.svg";
@@ -56,6 +57,15 @@ class AssertUtil {
   static const String countriesJsonData = "assets/location/countries.json";
   static const String statesJsonData = "assets/location/states.json";
   static const String citiesJsonData = "assets/location/cities.json";
+
+  static const String iconUsername = "assets/images/icon_username.svg";
+  static const String iconLocation = "assets/images/icon_location.svg";
+  static const String iconCoverAdd = "assets/images/icon_cover_add.svg";
+
+  ///
+  static const String closeSvg = "assets/images/svg_close.svg";
+  static const String recallSvg = "assets/images/svg_recall.svg";
+  static const String turnRightSvg = "assets/images/svg_turnright.svg";
 
   static const String no = "";
 }

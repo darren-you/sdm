@@ -4,14 +4,13 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:sdm/business/account/sign_up/basic_info_controller.dart';
 import 'package:sdm/components/view/custom_bottom_sheet.dart';
-import 'package:sdm/location/location_util.dart';
-import 'package:sdm/services/app_init_service.dart';
+import 'package:sdm/utils/routes_util.dart';
 
-import '../../../components/input/custom_bottom_sheet_picker.dart';
 import '../../../components/input/custom_edit_normal.dart';
 import '../../../components/input/location_picker.dart';
 import '../../../components/view/custom_body.dart';
 import '../../../enumm/color_enum.dart';
+import '../../../location/location_util.dart';
 import '../../../utils/assert_util.dart';
 import '../../../utils/color_util.dart';
 import '../view/title_bar.dart';
@@ -30,25 +29,21 @@ class BasicInfoPage extends GetView<BasicInfoController> {
         scroller: false,
         appBarHeight: appBarHeight,
         appBar: const CustomSignTitleBar(title: 'Basic info'),
-        body: SizedBox(
-          width: context.width,
-          height: 600.h,
-          child: Column(
-            children: [
-              /// 分割线
-              Container(
-                width: context.width,
-                height: 0.5.h,
-                color: HexColor("#D4D6D8"),
-              ),
+        body: Column(
+          children: [
+            /// 分割线
+            Container(
+              width: context.width,
+              height: 0.5.h,
+              color: HexColor("#D4D6D8"),
+            ),
 
-              /// 登陆输入
-              _inputUserInfo(context, controller),
+            /// 登陆输入
+            _inputUserInfo(context, controller),
 
-              /// 注册Card
-              _bottomPic(context),
-            ],
-          ),
+            /// 注册Card
+            _bottomPic(context),
+          ],
         ),
       ),
     );
@@ -85,7 +80,7 @@ Widget _inputUserInfo(BuildContext context, BasicInfoController controller) {
                 height: 48.h,
                 backgroundColor: MyColors.inputiHintBackgrounfColor.color,
                 borderRadius: BorderRadius.circular(44.r),
-                leftIcon: SvgPicture.asset(AssertUtil.iconEmail),
+                leftIcon: SvgPicture.asset(AssertUtil.iconUsername),
                 showSuffixIcon: false,
                 hintText: 'Username',
                 hintStyle: TextStyle(
@@ -94,39 +89,66 @@ Widget _inputUserInfo(BuildContext context, BasicInfoController controller) {
                 ),
               ),
               SizedBox(height: 28.h),
-              // CustomEditNormal(
-              //   editController: controller.locationController,
-              //   height: 48.h,
-              //   backgroundColor: MyColors.inputiHintBackgrounfColor.color,
-              //   borderRadius: BorderRadius.circular(44.r),
-              //   leftIcon: SvgPicture.asset(AssertUtil.iconPassword),
-              //   hintText: 'Location',
-              //   hintStyle: TextStyle(
-              //     fontSize: 18.sp,
-              //     color: MyColors.inputiHintColor.color,
-              //   ),
-              // ),
               GestureDetector(
-                onTap: () {
-                  showMyBottomSheet(
-                    context,
-                    showChild: LocationPicker(
-                      title: 'Location',
-                      confirmCallback: (countryDTO, stateDTO, cityDTO) {
-                        final coutryName = countryDTO?.countryName;
-                        final stateName = stateDTO?.stateName;
-                        final cityName = cityDTO?.cityName;
-                        logger.d('Location: $coutryName $stateName $cityName');
-                      },
-                    ),
+                onTap: () async {
+                  await LocationUtil.getInstance().initLocationData().then(
+                    (value) {
+                      showMyBottomSheet(
+                        context,
+                        showChild: LocationPicker(
+                          title: 'Location',
+                          firstListDefaultSelect: LocationUtil.getInstance()
+                              .getCountryIndex(controller.selectCountryDTO),
+                          secondListDefaultSelect: LocationUtil.getInstance()
+                              .getStateIndex(controller.selectCountryDTO,
+                                  controller.selectStateDTO),
+                          thirdListDefaultSelect: LocationUtil.getInstance()
+                              .getCityIndex(
+                                  controller.selectCountryDTO,
+                                  controller.selectStateDTO,
+                                  controller.selsectCityDTO),
+                          confirmCallback: (countryDTO, stateDTO, cityDTO) =>
+                              controller.selectLocation(
+                                  countryDTO, stateDTO, cityDTO),
+                        ),
+                      );
+                    },
                   );
                 },
                 child: Container(
-                  height: 50,
-                  color: Colors.blue,
+                  height: 48.h,
+                  decoration: BoxDecoration(
+                    color: MyColors.inputiHintBackgrounfColor.color,
+                    borderRadius: BorderRadius.circular(48.h),
+                  ),
+                  child: Row(
+                    children: [
+                      const SizedBox(width: 16),
+                      SvgPicture.asset(AssertUtil.iconLocation),
+                      const SizedBox(width: 20),
+                      Expanded(
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Obx(
+                            () => Text(
+                              controller.location.value,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                fontSize: 18.sp,
+                                color: controller.location.value == 'Location'
+                                    ? MyColors.inputiHintColor.color
+                                    : MyColors.textMain.color,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 24),
+                    ],
+                  ),
                 ),
               ),
-
               SizedBox(height: 24.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -201,7 +223,9 @@ Widget _inputUserInfo(BuildContext context, BasicInfoController controller) {
           child: Align(
             alignment: Alignment.centerRight,
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Get.toNamed(RoutesPath.coverPage);
+              },
               child: Obx(
                 () => Container(
                   width: 94.w,
@@ -247,14 +271,9 @@ Widget _inputUserInfo(BuildContext context, BasicInfoController controller) {
 /// 底部插画
 Widget _bottomPic(BuildContext context) {
   return Expanded(
-    child: Container(
-      margin: EdgeInsets.only(
-        bottom: context.mediaQueryPadding.bottom,
-      ),
-      child: SvgPicture.asset(
-        AssertUtil.bgBasicInfo,
-        fit: BoxFit.cover,
-      ),
+    child: SvgPicture.asset(
+      AssertUtil.bgBasicInfo,
+      fit: BoxFit.cover,
     ),
   );
 }

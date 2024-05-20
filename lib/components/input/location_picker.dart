@@ -399,7 +399,6 @@ class LocationPickerController extends GetxController {
 
   @override
   void onInit() async {
-    await LocationUtil.getInstance().initLocationData();
     countriesDTOList = LocationUtil.getInstance().countriesList();
     statesDTOList = LocationUtil.getInstance().statesList();
     citiesDTOList = LocationUtil.getInstance().citiesList();

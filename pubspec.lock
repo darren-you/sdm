@@ -209,7 +209,7 @@ packages:
     source: hosted
     version: "1.2.1"
   http_client_helper:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: http_client_helper
       sha256: "8a9127650734da86b5c73760de2b404494c968a3fd55602045ffec789dac3cb1"
@@ -236,26 +236,26 @@ packages:
     dependency: "direct main"
     description:
       name: image_editor
-      sha256: "81e4c6ccfd4ff242a89695347113bb90b62b89bab70e97cdd5625c85887a86e3"
+      sha256: "0fe70befea0dbaf24a7cacc32c28311a65118f66637997ad072e9063f59efdd8"
       url: "https://pub.dev"
     source: hosted
-    version: "1.5.0"
+    version: "1.5.1"
   image_editor_common:
     dependency: transitive
     description:
       name: image_editor_common
-      sha256: "03a6a85608ffe4e7de5b1f042ac09859110b5b5ddc74a91e206d3084db27fe9b"
+      sha256: d141c0847148a7da573a5be5ca02e70d381e61cb6484ebef52a230ca1d6c56ab
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.1"
+    version: "1.1.2"
   image_editor_ohos:
     dependency: transitive
     description:
       name: image_editor_ohos
-      sha256: aee8fa1490fedbb98583dfaebb4162c295abeb0044e94f2eb2ad52ae419e6f6e
+      sha256: "06756859586d5acefec6e3b4f356f9b1ce05ef09213bcb9a0ce1680ecea2d054"
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.7"
+    version: "0.0.9"
   image_editor_platform_interface:
     dependency: transitive
     description:
