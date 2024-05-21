@@ -4,6 +4,8 @@
 
 import 'dart:convert';
 
+import 'package:sdm/location/base_item_dto.dart';
+
 StatesDTO statesDtoFromJson(String str) => StatesDTO.fromJson(json.decode(str));
 
 String statesDtoToJson(StatesDTO data) => json.encode(data.toJson());
@@ -68,7 +70,7 @@ class StatesColumnDTO {
       };
 }
 
-class StateDTO {
+class StateDTO extends BaseItemDTO {
   int stateId;
   String stateName;
   String stateAbbr;
@@ -102,4 +104,12 @@ class StateDTO {
         "parent_state_id": parentStateId,
         "obsolete": obsolete,
       };
+
+  @override
+  String text() {
+    return stateName;
+  }
+
+  @override
+  get originDTO => this;
 }

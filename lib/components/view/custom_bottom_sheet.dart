@@ -3,9 +3,11 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:sdm/utils/screen_util.dart';
 
 Future<T?> showMyBottomSheet<T>(
   BuildContext context, {
+  Future<T>? init,
   required Widget showChild,
   bool scrollControlled = false,
   Color? backgroundColor = Colors.white,
@@ -20,21 +22,43 @@ Future<T?> showMyBottomSheet<T>(
     ));
   }
 
-  T? result = await showModalBottomSheet(
-    context: context,
-    clipBehavior: Clip.hardEdge,
-    elevation: 0,
-    backgroundColor: backgroundColor,
-    shape: RoundedRectangleBorder(borderRadius: radius!),
-    barrierColor: Colors.black.withOpacity(0.25),
-    // A处
-    constraints: BoxConstraints(
-        maxHeight: MediaQuery.of(context).size.height -
-            MediaQuery.of(context).viewPadding.top,
-        maxWidth: context.width),
-    isScrollControlled: scrollControlled,
-    builder: (context) => showChild,
-  );
+  if (init != null) {
+    await init.then((value) async {
+      T? result = await showModalBottomSheet(
+        context: context,
+        clipBehavior: Clip.hardEdge,
+        elevation: 0,
+        backgroundColor: backgroundColor,
+        shape: RoundedRectangleBorder(borderRadius: radius!),
+        barrierColor: Colors.black.withOpacity(0.25),
+        // A处
+        constraints: BoxConstraints(
+            maxHeight: MyScreenUtil.getInstance().screenHeight -
+                MyScreenUtil.getInstance().statusBarHeight,
+            maxWidth: context.width),
+        isScrollControlled: true,
+        builder: (context) => showChild,
+      );
+      return result;
+    });
+  } else {
+    T? result = await showModalBottomSheet(
+      context: context,
+      clipBehavior: Clip.hardEdge,
+      elevation: 0,
+      backgroundColor: backgroundColor,
+      shape: RoundedRectangleBorder(borderRadius: radius!),
+      barrierColor: Colors.black.withOpacity(0.25),
+      // A处
+      constraints: BoxConstraints(
+          maxHeight: MyScreenUtil.getInstance().screenHeight -
+              MyScreenUtil.getInstance().statusBarHeight,
+          maxWidth: context.width),
+      isScrollControlled: true,
+      builder: (context) => showChild,
+    );
+    return result;
+  }
 
   // 关闭BottomSheet时恢复背景色
   if (Platform.isAndroid) {
@@ -43,5 +67,5 @@ Future<T?> showMyBottomSheet<T>(
     ));
   }
 
-  return result;
+  return null;
 }

@@ -4,6 +4,8 @@
 
 import 'dart:convert';
 
+import 'package:sdm/location/base_item_dto.dart';
+
 CitiesDTO cityDtoFromJson(String str) => CitiesDTO.fromJson(json.decode(str));
 
 String cityDtoToJson(CitiesDTO data) => json.encode(data.toJson());
@@ -67,7 +69,7 @@ class CityColumnDTO {
       };
 }
 
-class CityDTO {
+class CityDTO extends BaseItemDTO {
   int cityId;
   String cityName;
   int stateId;
@@ -101,4 +103,12 @@ class CityDTO {
         "latitude": latitude,
         "longitude": longitude,
       };
+
+  @override
+  String text() {
+    return cityName;
+  }
+
+  @override
+  get originDTO => this;
 }

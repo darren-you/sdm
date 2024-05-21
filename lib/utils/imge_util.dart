@@ -7,9 +7,7 @@ import 'package:wechat_assets_picker/wechat_assets_picker.dart';
 class ImageUtil {
   static final ImageUtil _imageUtil = ImageUtil._();
 
-  ImageUtil._();
-
-  factory ImageUtil() {
+  factory ImageUtil._() {
     return _imageUtil;
   }
 

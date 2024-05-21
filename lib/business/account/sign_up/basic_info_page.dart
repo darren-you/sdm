@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:sdm/business/account/sign_up/basic_info_controller.dart';
+import 'package:sdm/components/input/location_bottom_sheet.dart';
 import 'package:sdm/components/view/custom_bottom_sheet.dart';
 import 'package:sdm/utils/routes_util.dart';
 
@@ -91,28 +92,38 @@ Widget _inputUserInfo(BuildContext context, BasicInfoController controller) {
               SizedBox(height: 28.h),
               GestureDetector(
                 onTap: () async {
-                  await LocationUtil.getInstance().initLocationData().then(
-                    (value) {
-                      showMyBottomSheet(
-                        context,
-                        showChild: LocationPicker(
-                          title: 'Location',
-                          firstListDefaultSelect: LocationUtil.getInstance()
-                              .getCountryIndex(controller.selectCountryDTO),
-                          secondListDefaultSelect: LocationUtil.getInstance()
-                              .getStateIndex(controller.selectCountryDTO,
-                                  controller.selectStateDTO),
-                          thirdListDefaultSelect: LocationUtil.getInstance()
-                              .getCityIndex(
-                                  controller.selectCountryDTO,
-                                  controller.selectStateDTO,
-                                  controller.selsectCityDTO),
-                          confirmCallback: (countryDTO, stateDTO, cityDTO) =>
-                              controller.selectLocation(
-                                  countryDTO, stateDTO, cityDTO),
-                        ),
-                      );
-                    },
+                  // await LocationUtil.getInstance().initLocationData().then(
+                  //   (value) {
+                  //     // showMyBottomSheet(
+                  //     //   context,
+                  //     //   showChild: LocationPicker(
+                  //     //     title: 'Location',
+                  //     //     firstListDefaultSelect: LocationUtil.getInstance()
+                  //     //         .getCountryIndex(controller.selectCountryDTO),
+                  //     //     secondListDefaultSelect: LocationUtil.getInstance()
+                  //     //         .getStateIndex(controller.selectCountryDTO,
+                  //     //             controller.selectStateDTO),
+                  //     //     thirdListDefaultSelect: LocationUtil.getInstance()
+                  //     //         .getCityIndex(
+                  //     //             controller.selectCountryDTO,
+                  //     //             controller.selectStateDTO,
+                  //     //             controller.selsectCityDTO),
+                  //     //     confirmCallback: (countryDTO, stateDTO, cityDTO) =>
+                  //     //         controller.selectLocation(
+                  //     //             countryDTO, stateDTO, cityDTO),
+                  //     //   ),
+                  //     // );
+
+                  //     showMyBottomSheet(
+                  //       context,
+                  //       showChild: const LocationBottomSheet(),
+                  //     );
+                  //   },
+                  // );
+                  showMyBottomSheet(
+                    context,
+                    init: LocationUtil.getInstance().initLocationData(),
+                    showChild: const LocationBottomSheet(),
                   );
                 },
                 child: Container(

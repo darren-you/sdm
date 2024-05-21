@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
+import 'package:sdm/utils/screen_util.dart';
 
 import 'routes/app_routes.dart';
 import 'routes/routing_callback_listener.dart';
@@ -42,6 +43,9 @@ class SDMApp extends StatelessWidget {
           routingCallback: RoutingCallbackListener.routingListner,
           theme: ThemeData(platform: TargetPlatform.iOS),
           debugShowCheckedModeBanner: false,
+          onInit: () {
+            MyScreenUtil.getInstance().init(context);
+          },
         );
       },
     );

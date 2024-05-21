@@ -61,6 +61,8 @@ class AssertUtil {
   static const String iconUsername = "assets/images/icon_username.svg";
   static const String iconLocation = "assets/images/icon_location.svg";
   static const String iconCoverAdd = "assets/images/icon_cover_add.svg";
+  static const String iconGoDown = "assets/images/icon_go_down.svg";
+  static const String iconGoUp = "assets/images/icon_go_up.svg";
 
   ///
   static const String closeSvg = "assets/images/svg_close.svg";

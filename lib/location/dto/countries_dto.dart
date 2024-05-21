@@ -4,6 +4,8 @@
 
 import 'dart:convert';
 
+import 'package:sdm/location/base_item_dto.dart';
+
 CountriesDTO countriesDtoFromJson(String str) =>
     CountriesDTO.fromJson(json.decode(str));
 
@@ -70,7 +72,7 @@ class CountryColumnDTO {
       };
 }
 
-class CountryDTO {
+class CountryDTO extends BaseItemDTO {
   int countryId;
   String countryName;
   String countryAbbr;
@@ -104,4 +106,12 @@ class CountryDTO {
         "is_developed": isDeveloped,
         "country_code": countryCode,
       };
+
+  @override
+  String text() {
+    return countryName;
+  }
+
+  @override
+  get originDTO => this;
 }
