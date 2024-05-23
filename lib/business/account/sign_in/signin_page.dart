@@ -21,6 +21,7 @@ class SigninPage extends GetView<SigninPageController> {
 
     return Scaffold(
       backgroundColor: Colors.white,
+      resizeToAvoidBottomInset: false,
       body: CustomBody(
         scroller: false,
         appBarHeight: appBarHeight,

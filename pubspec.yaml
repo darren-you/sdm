@@ -47,6 +47,7 @@ dependencies:
   # SVG 显示
   flutter_svg: ^2.0.5
   wechat_assets_picker: ^9.0.2
+  wechat_camera_picker: ^4.2.2
   image_editor: ^1.5.1
   extended_image: ^8.2.0
   http_client_helper: ^3.0.0

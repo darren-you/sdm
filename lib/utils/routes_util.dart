@@ -1,4 +1,6 @@
 class RoutesPath {
+  RoutesPath._();
+
   static const bottomNavPage = '/';
   static const loginPage = '/loginPage';
   static const signInPage = '/signInPage';

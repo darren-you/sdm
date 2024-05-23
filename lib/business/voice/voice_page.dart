@@ -222,18 +222,26 @@ class VoicePage extends StatelessWidget {
                       child: Container(
                         alignment: Alignment.center,
                         margin: EdgeInsets.symmetric(
-                            vertical: 1.r, horizontal: 4.r),
+                          vertical: 1.w,
+                          horizontal: 4.w,
+                        ),
                         padding: EdgeInsets.symmetric(
-                            vertical: 7.h, horizontal: 10.w),
+                          vertical: 2.w,
+                          horizontal: 10.w,
+                        ),
                         decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(26.r))),
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(26.r),
+                          ),
+                        ),
                         child: Text(
-                          '50 Coins left',
+                          '50 Coins',
+                          textAlign: TextAlign.center,
                           style: TextStyle(
-                              color: HexColor("#1E1E1E"),
-                              fontWeight: FontWeight.w600),
+                            color: HexColor("#1E1E1E"),
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
                     ),

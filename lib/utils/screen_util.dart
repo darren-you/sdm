@@ -12,13 +12,11 @@ class MyScreenUtil {
 
   MyScreenUtil._();
 
-  factory MyScreenUtil() {
+  factory MyScreenUtil._instance() {
     return _screenUtil;
   }
 
-  static MyScreenUtil getInstance() {
-    return _screenUtil;
-  }
+  static MyScreenUtil getInstance() => MyScreenUtil._instance();
 
   void init(BuildContext context) {
     screenHeight = MediaQuery.of(context).size.height;
@@ -47,5 +45,11 @@ class MyScreenUtil {
   double getBottomNavBarHeight() {
     if (inited) throw Exception('ScreenUtil not init!');
     return bottomNavBarHeight;
+  }
+}
+
+class Demo {
+  void test() {
+    MyScreenUtil._();
   }
 }

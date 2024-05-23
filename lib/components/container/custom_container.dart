@@ -18,7 +18,7 @@ class CustomContainer extends StatelessWidget {
   final bool foreAnim; // 是否开启显示前景色动画
 
   const CustomContainer({
-    Key? key,
+    super.key,
     this.onTap,
     this.child,
     this.duration = const Duration(milliseconds: 50),
@@ -33,7 +33,7 @@ class CustomContainer extends StatelessWidget {
     this.clipBehavior = Clip.none,
     this.bgAnim = false,
     this.foreAnim = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

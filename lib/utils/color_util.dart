@@ -26,6 +26,8 @@ class HexColor extends Color {
 }
 
 class ColorUtil {
+  ColorUtil._();
+
   static Color getRandomColor() {
     final random = Random();
     return Color(0xFFFFFFFF & random.nextInt(0xFFFFFFFF));

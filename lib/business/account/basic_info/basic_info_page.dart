@@ -2,21 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:sdm/business/account/sign_up/basic_info_controller.dart';
+import 'package:sdm/business/account/basic_info/basic_info_controller.dart';
 import 'package:sdm/components/input/location_bottom_sheet.dart';
 import 'package:sdm/components/view/custom_bottom_sheet.dart';
 import 'package:sdm/services/app_init_service.dart';
-import 'package:sdm/utils/routes_util.dart';
 
 import '../../../components/input/custom_edit_normal.dart';
-import '../../../components/input/location_picker.dart';
 import '../../../components/view/custom_body.dart';
 import '../../../enumm/color_enum.dart';
 import '../../../location/location_util.dart';
 import '../../../utils/assert_util.dart';
 import '../../../utils/color_util.dart';
 import '../view/title_bar.dart';
-import 'view/slide_track_shap.dart';
+import '../sign_up/view/slide_track_shap.dart';
 
 class BasicInfoPage extends GetView<BasicInfoController> {
   const BasicInfoPage({super.key});
@@ -27,6 +25,7 @@ class BasicInfoPage extends GetView<BasicInfoController> {
 
     return Scaffold(
       backgroundColor: Colors.white,
+      resizeToAvoidBottomInset: false,
       body: CustomBody(
         scroller: false,
         appBarHeight: appBarHeight,
@@ -40,11 +39,16 @@ class BasicInfoPage extends GetView<BasicInfoController> {
               color: HexColor("#D4D6D8"),
             ),
 
-            /// 登陆输入
+            // 信息输入
             _inputUserInfo(context, controller),
 
-            /// 注册Card
-            _bottomPic(context),
+            // 插画
+            Expanded(
+              child: SvgPicture.asset(
+                AssertUtil.bgBasicInfo,
+                fit: BoxFit.cover,
+              ),
+            )
           ],
         ),
       ),
@@ -284,16 +288,6 @@ Widget _inputUserInfo(BuildContext context, BasicInfoController controller) {
           ),
         ),
       ],
-    ),
-  );
-}
-
-/// 底部插画
-Widget _bottomPic(BuildContext context) {
-  return Expanded(
-    child: SvgPicture.asset(
-      AssertUtil.bgBasicInfo,
-      fit: BoxFit.cover,
     ),
   );
 }

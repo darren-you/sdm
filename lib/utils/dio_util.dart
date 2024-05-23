@@ -15,11 +15,15 @@ enum DioConfig {
 }
 
 class DioUtil {
-  DioUtil._privateConstructor();
-  static final DioUtil _instance = DioUtil._privateConstructor();
-  factory DioUtil() {
+  static final DioUtil _instance = DioUtil._();
+
+  DioUtil._();
+
+  factory DioUtil._getInstance() {
     return _instance;
   }
+
+  static DioUtil getInstance() => DioUtil._getInstance();
 
   static late Dio _defaultBaseUrlDio;
   static late Dio _otherBaseUrlDio;

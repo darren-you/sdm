@@ -60,9 +60,10 @@ Widget viewPagerContents(HomePageController controller) {
 Widget bottomNavWidget(BuildContext context, HomePageController controller) {
   return Align(
     alignment: Alignment.bottomCenter,
-    child: SizedBox(
+    child: Container(
       width: context.width,
-      height: 107.h,
+      height: 106.5.h,
+      //color: Colors.amber,
       child: Stack(
         children: [
           Positioned(
@@ -118,8 +119,8 @@ Widget bottomNavWidget(BuildContext context, HomePageController controller) {
                 borderRadius: BorderRadius.circular(66.w),
                 duration: const Duration(milliseconds: 200),
                 child: Container(
-                  width: 66.w,
-                  height: 66.w,
+                  width: 64.h,
+                  height: 64.h,
                   decoration: BoxDecoration(
                     color: controller.currentNavTab.value == 1
                         ? MyColors.mainColor.color

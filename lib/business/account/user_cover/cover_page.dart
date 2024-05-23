@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:sdm/business/account/sign_up/cover_page_controller.dart';
+import 'package:sdm/business/account/user_cover/cover_page_controller.dart';
+import 'package:sdm/components/view/custom_bottom_sheet.dart';
 import 'package:sdm/enumm/color_enum.dart';
 
 import '../../../components/view/custom_body.dart';
@@ -74,9 +75,12 @@ Widget _userCover(BuildContext context, CoverPageController controller) {
             fontWeight: FontWeight.w500,
           ),
         ),
-        SizedBox(height: 48.h),
+        SizedBox(height: 24.h),
+
+        // 选择图片
         GestureDetector(
-          onTap: () => controller.getImage(context),
+          //onTap: () => controller.getImage(context),
+          onTap: () => _chosePic(context, controller),
           child: Obx(
             () => (null == controller.userAvatarImg.value)
                 ? Container(
@@ -160,6 +164,88 @@ Widget _userCover(BuildContext context, CoverPageController controller) {
           ),
         ),
       ],
+    ),
+  );
+}
+
+void _chosePic(BuildContext context, CoverPageController controller) {
+  showMyBottomSheet(
+    context,
+    showChild: Container(
+      width: context.width,
+      height: 233.h,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(24.r),
+          topRight: Radius.circular(24.r),
+        ),
+      ),
+      child: Column(
+        children: [
+          SizedBox(height: 12.5.h),
+          GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+              controller.getImageFromLibrary(context);
+            },
+            child: Container(
+              alignment: Alignment.center,
+              height: 60.h,
+              color: Colors.transparent,
+              child: Text(
+                'Upload from library',
+                style: TextStyle(
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.bold,
+                  color: const Color(0xFF131313),
+                ),
+              ),
+            ),
+          ),
+          GestureDetector(
+            onTap: () => controller.takePhoto(context),
+            child: Container(
+              height: 60.h,
+              alignment: Alignment.center,
+              color: Colors.transparent,
+              child: Text(
+                'Take from camera',
+                style: TextStyle(
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.bold,
+                  color: const Color(0xFF131313),
+                ),
+              ),
+            ),
+          ),
+          SizedBox(height: 12.5.h),
+          Container(
+            height: 0.5.h,
+            color: const Color(0xFFDEDEDE),
+          ),
+          Expanded(
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Container(
+                alignment: Alignment.center,
+                //color: Colors.red,
+                child: Text(
+                  'CANCEL',
+                  style: TextStyle(
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w500,
+                    color: const Color(0xFFBDBDC7),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          SizedBox(height: context.mediaQueryPadding.bottom),
+        ],
+      ),
     ),
   );
 }

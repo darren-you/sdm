@@ -266,7 +266,8 @@ class LocationBottomSheet extends StatelessWidget {
                   onTap: () => controller.saveLocation(context),
                   child: Container(
                     margin: EdgeInsets.only(
-                        bottom: context.mediaQueryPadding.bottom),
+                        top: 16.h,
+                        bottom: context.mediaQueryPadding.bottom + 16.h),
                     child: Center(
                       child: Text(
                         'SAVE',
