@@ -7,13 +7,13 @@ import 'package:wechat_assets_picker/wechat_assets_picker.dart';
 class ImageUtil {
   static final ImageUtil _imageUtil = ImageUtil._();
 
-  factory ImageUtil._() {
+  ImageUtil._();
+
+  factory ImageUtil() {
     return _imageUtil;
   }
 
-  static ImageUtil getInstance() {
-    return _imageUtil;
-  }
+  static ImageUtil getInstance() => _imageUtil;
 
   /// 调用 wechat_assets_picker 库选择 1 张图片
   Future<Uint8List?> pickImage(BuildContext context) async {

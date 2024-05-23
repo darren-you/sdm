@@ -4,6 +4,8 @@ import 'package:sdm/location/dto/city_dto.dart';
 import 'package:sdm/location/dto/countries_dto.dart';
 import 'package:sdm/location/dto/states_dto.dart';
 
+import '../../../utils/routes_util.dart';
+
 class BasicInfoController extends GetxController {
   var mindInfo = ''.obs;
   var usernameCorrectState = false.obs;
@@ -21,6 +23,12 @@ class BasicInfoController extends GetxController {
     return (usernameCorrectState.value &&
         locationCorrectState.value &&
         ageValue.value != 0);
+  }
+
+  /// 下一步
+  void nextStep() {
+    if (!canNext()) return;
+    Get.toNamed(RoutesPath.coverPage);
   }
 
   /// 选择位置

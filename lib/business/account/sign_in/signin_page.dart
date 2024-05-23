@@ -38,7 +38,7 @@ class SigninPage extends GetView<SigninPageController> {
               ),
 
               /// 登陆输入
-              inputAccountInfo(context),
+              inputAccountInfo(context, controller),
 
               /// 注册Card
               bottomPic(context),
@@ -51,7 +51,7 @@ class SigninPage extends GetView<SigninPageController> {
 }
 
 /// 登陆输入
-Widget inputAccountInfo(BuildContext context) {
+Widget inputAccountInfo(BuildContext context, SigninPageController controller) {
   return Container(
     width: context.width,
     height: 291.h,
@@ -77,9 +77,9 @@ Widget inputAccountInfo(BuildContext context) {
             children: [
               CustomEditNormal(
                 height: 48.h,
+                editController: controller.emailController,
                 backgroundColor: MyColors.inputiHintBackgrounfColor.color,
                 borderRadius: BorderRadius.circular(44.r),
-                keyboardType: TextInputType.visiblePassword,
                 leftIcon: SvgPicture.asset(AssertUtil.iconEmail),
                 showSuffixIcon: false,
                 hintText: 'Email address',
@@ -91,6 +91,7 @@ Widget inputAccountInfo(BuildContext context) {
               SizedBox(height: 28.h),
               CustomEditNormal(
                 height: 48.h,
+                editController: controller.passwordController,
                 backgroundColor: MyColors.inputiHintBackgrounfColor.color,
                 borderRadius: BorderRadius.circular(44.r),
                 keyboardType: TextInputType.visiblePassword,
@@ -101,7 +102,19 @@ Widget inputAccountInfo(BuildContext context) {
                   color: MyColors.inputiHintColor.color,
                 ),
               ),
-              SizedBox(height: 34.h),
+              SizedBox(height: 8.h),
+              Obx(
+                () => Container(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    controller.mindInfo.value,
+                    style: TextStyle(
+                      color: MyColors.textMindColor.color,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 9.h),
               Align(
                 alignment: Alignment.centerRight,
                 child: GestureDetector(
@@ -124,33 +137,38 @@ Widget inputAccountInfo(BuildContext context) {
           child: Align(
             alignment: Alignment.centerRight,
             child: GestureDetector(
-              onTap: () {
-                logger.i('Click > > > ');
-              },
-              child: Container(
-                width: 94.w,
-                height: 48.h,
-                decoration: BoxDecoration(
-                  color: MyColors.mainColor.color,
-                  borderRadius: BorderRadius.only(
+              onTap: controller.nextStep,
+              child: Obx(
+                () => Container(
+                  width: 94.w,
+                  height: 48.h,
+                  decoration: BoxDecoration(
+                    color: controller.canNext()
+                        ? MyColors.mainColor.color
+                        : MyColors.inputiHintColor.color,
+                    borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(48.r),
-                      bottomLeft: Radius.circular(48.r)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: HexColor("#DD73EC").withOpacity(0.72),
-                      offset: Offset(0, 2.h),
-                      blurRadius: 4.r,
-                      spreadRadius: 0,
+                      bottomLeft: Radius.circular(48.r),
                     ),
-                  ],
-                ),
-                child: Container(
-                  alignment: Alignment.centerLeft,
-                  margin: EdgeInsets.only(left: 28.w),
-                  child: SvgPicture.asset(
-                    AssertUtil.iconGo,
-                    colorFilter:
-                        const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                    boxShadow: [
+                      BoxShadow(
+                        color: controller.canNext()
+                            ? HexColor("#DD73EC").withOpacity(0.72)
+                            : MyColors.inputiHintColor.color,
+                        offset: Offset(0, 2.h),
+                        blurRadius: 4.r,
+                        spreadRadius: 0,
+                      ),
+                    ],
+                  ),
+                  child: Container(
+                    alignment: Alignment.centerLeft,
+                    margin: EdgeInsets.only(left: 28.w),
+                    child: SvgPicture.asset(
+                      AssertUtil.iconGo,
+                      colorFilter:
+                          const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                    ),
                   ),
                 ),
               ),
