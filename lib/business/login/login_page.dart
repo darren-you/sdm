@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:sdm/components/container/custom_container.dart';
 import 'package:sdm/components/view/custom_body.dart';
 import 'package:sdm/enumm/color_enum.dart';
@@ -25,7 +26,8 @@ class LoginPage extends StatelessWidget {
         body: Stack(
           children: [
             /// 背景滚动层
-            backgrounWidget(context),
+            //backgrounWidget(context),
+            loginBackgroundAnim(context),
 
             /// 半透明蒙层
             coverWidget(context),
@@ -242,5 +244,15 @@ Widget loginFunWidget(BuildContext context) {
         ),
       ],
     ),
+  );
+}
+
+/// 登陆动画
+Widget loginBackgroundAnim(BuildContext context) {
+  return Container(
+    width: context.width,
+    height: context.height,
+    color: Colors.amber,
+    child: LottieBuilder.asset("assets/lottie/home.json"),
   );
 }
