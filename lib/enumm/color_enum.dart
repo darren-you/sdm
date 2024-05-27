@@ -37,6 +37,7 @@ enum MyColors {
   inputiHintColor(color: Color(0xFFA2A2A2)),
   textFgPwdColor(color: Color(0xFF5D5D5D)),
   textMindColor(color: Color(0xFFFF5B78)),
+  userOnlineColor(color: Color(0XFF00C635)),
 
   endColor(color: Colors.amber);
 

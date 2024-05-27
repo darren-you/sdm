@@ -96,7 +96,12 @@ class LocationBottomSheet extends StatelessWidget {
                                   ),
                                 ),
                                 SizedBox(width: 12.w),
-                                SvgPicture.asset(AssertUtil.iconGoDown),
+                                Obx(
+                                  () => controller.locationCurrentType.value ==
+                                          LocationEnumm.country
+                                      ? SvgPicture.asset(AssertUtil.iconGoUp)
+                                      : SvgPicture.asset(AssertUtil.iconGoDown),
+                                ),
                               ],
                             ),
                           ],
@@ -147,7 +152,14 @@ class LocationBottomSheet extends StatelessWidget {
                                     ),
                                   ),
                                   SizedBox(width: 12.w),
-                                  SvgPicture.asset(AssertUtil.iconGoDown),
+                                  Obx(
+                                    () => controller
+                                                .locationCurrentType.value ==
+                                            LocationEnumm.state
+                                        ? SvgPicture.asset(AssertUtil.iconGoUp)
+                                        : SvgPicture.asset(
+                                            AssertUtil.iconGoDown),
+                                  ),
                                 ],
                               ),
                             ],
@@ -199,7 +211,14 @@ class LocationBottomSheet extends StatelessWidget {
                                     ),
                                   ),
                                   SizedBox(width: 12.w),
-                                  SvgPicture.asset(AssertUtil.iconGoDown),
+                                  Obx(
+                                    () => controller
+                                                .locationCurrentType.value ==
+                                            LocationEnumm.city
+                                        ? SvgPicture.asset(AssertUtil.iconGoUp)
+                                        : SvgPicture.asset(
+                                            AssertUtil.iconGoDown),
+                                  ),
                                 ],
                               ),
                             ],
@@ -217,7 +236,7 @@ class LocationBottomSheet extends StatelessWidget {
                 // 隐藏的Country列表
                 Obx(() => controller.animDoned.value &&
                         controller.isExpanded.value
-                    ? Container(
+                    ? SizedBox(
                         width: context.width,
                         height: 360.h,
                         //color: Colors.blue,
@@ -266,8 +285,7 @@ class LocationBottomSheet extends StatelessWidget {
                   onTap: () => controller.saveLocation(context),
                   child: Container(
                     margin: EdgeInsets.only(
-                        top: 16.h,
-                        bottom: context.mediaQueryPadding.bottom + 16.h),
+                        top: 16.h, bottom: context.mediaQueryPadding.bottom),
                     child: Center(
                       child: Text(
                         'SAVE',
