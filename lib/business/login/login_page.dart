@@ -100,11 +100,14 @@ Widget loginFunWidget(BuildContext context) {
           },
         ),
         Padding(padding: EdgeInsets.only(bottom: 16.h)),
-        Text(
-          'Serious Discreet Meet',
-          style: TextStyle(
-            fontSize: 24.sp,
-            color: Colors.white,
+        GestureDetector(
+          onTap: () => Get.toNamed(RoutesPath.soundPage),
+          child: Text(
+            'Serious Discreet Meet',
+            style: TextStyle(
+              fontSize: 24.sp,
+              color: Colors.white,
+            ),
           ),
         ),
         Padding(padding: EdgeInsets.only(bottom: 262.h)),

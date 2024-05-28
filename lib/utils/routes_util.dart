@@ -7,4 +7,8 @@ class RoutesPath {
   static const signUpPage = '/signUpPage';
   static const basicInfoPage = '/basicInfoPage';
   static const coverPage = '/coverPage';
+
+  // demo page -----------
+  static const soundPage = '/soundPage';
+  // demo page -----------
 }

@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:date_format/date_format.dart';
 
 class DateUtil {
@@ -34,5 +36,28 @@ class DateUtil {
     }
 
     return days;
+  }
+
+  /// 根据DateTime返回AM或者PM
+  static String getAmOrPm(DateTime dateTime) {
+    return dateTime.hour < 12 ? "AM" : "PM";
+  }
+
+  /// 根据DateTime返回02:28 PM格式时间
+  static String getAmOrPmFromatTime(DateTime dateTime) {
+    final timeEnd = getAmOrPm(dateTime);
+    return formatDate(dateTime, [h, ':', m, ' ', timeEnd]);
+  }
+
+  /// 生成随机DateTime
+  static DateTime getRandomDateTime() {
+    final now = DateTime.now();
+    final random = Random();
+    final year = now.year - random.nextInt(10);
+    final month = now.month - random.nextInt(3);
+    final day = now.day - random.nextInt(7);
+    final hour = now.hour - random.nextInt(12);
+    final minute = now.minute - random.nextInt(60);
+    return DateTime(year, month, day, hour, minute);
   }
 }

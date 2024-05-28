@@ -6,10 +6,12 @@ import 'package:sdm/business/account/user_cover/cover_page_controller.dart';
 import 'package:sdm/business/login/login_page.dart';
 import 'package:sdm/business/login/login_page_controller.dart';
 import 'package:sdm/business/account/sign_in/signin_page.dart';
+import 'package:sdm/business/message/message_page_controller.dart';
 import 'package:sdm/utils/routes_util.dart';
 
 import '../business/account/sign_up/signup_page.dart';
 import '../business/account/sign_up/signup_page_controller.dart';
+import '../business/demo/soun_demo.dart';
 import '../business/home/home_page.dart';
 import '../business/home/home_page_controller.dart';
 import '../business/account/sign_in/signin_page_controller.dart';
@@ -23,6 +25,7 @@ class AppPages {
       binding: BindingsBuilder(
         () {
           Get.lazyPut(() => HomePageController());
+          Get.lazyPut(() => MessagePageController());
         },
       ),
     ),
@@ -81,5 +84,16 @@ class AppPages {
         },
       ),
     ),
+
+    // demo page ------------
+    GetPage(
+      name: RoutesPath.soundPage,
+      page: () => const SoundRecorderPage(),
+      binding: BindingsBuilder(
+        () {},
+      ),
+    ),
+
+    // demo page ------------
   ];
 }
