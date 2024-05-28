@@ -5,8 +5,6 @@ import 'package:get/get.dart';
 import 'package:sdm/utils/imge_util.dart';
 import 'package:sdm/components/image/update_img_page.dart';
 
-import '../../../services/app_init_service.dart';
-
 class CoverPageController extends GetxController {
   var coverImgState = false.obs;
   Rx<Uint8List?> userAvatarImg = Rx<Uint8List?>(null);

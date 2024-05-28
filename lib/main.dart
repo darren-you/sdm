@@ -9,13 +9,14 @@ import 'routes/routing_callback_listener.dart';
 import 'services/app_init_service.dart';
 import 'utils/routes_util.dart';
 
-// flutter build apk --split-per-abi
+/// flutter build apk --split-per-abi
 
-// Xcode编译问题
-// delete Podfile
-// run 【flutter clean】, 【flutter pub get】 in your Flutter program, then Podfile will be generated
-// In new Podfile, adjust platform to 14.0 and Uncomment that line
-// run 【pod install】 in your iOS program
+/// Xcode编译问题
+///
+/// delete Podfile
+/// run 【flutter clean】, 【flutter pub get】 in your Flutter program, then Podfile will be generated
+/// In new Podfile, adjust platform to 14.0 and Uncomment that line
+/// run 【pod install】 in your iOS program
 void main() async {
   // 全局初始化
   await AppInitService.init();

@@ -42,14 +42,11 @@ class MessagePage extends GetView<MessagePageController> {
           ),
         ),
         body: SlidableAutoCloseBehavior(
-          // child: ListView(
-          //   children: _buildMessageList(),
-          // ),
           child: AnimatedList(
             key: controller.listKey,
             initialItemCount: controller.messageListItemVO.length,
             itemBuilder: (context, index, animation) {
-              return _buildMessageListItem(context, index, animation,
+              return buildMessageListItem(context, index, animation,
                   controller.messageListItemVO[index], controller);
             },
           ),
@@ -59,7 +56,7 @@ class MessagePage extends GetView<MessagePageController> {
   }
 }
 
-Widget _buildMessageListItem(
+Widget buildMessageListItem(
     BuildContext context,
     int index,
     Animation<double> animation,
@@ -106,75 +103,86 @@ Widget _buildMessageListItem(
             ),
             // 昵称、最近消息
             SizedBox(width: 10.w),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(height: 6.h),
-                Row(
-                  children: [
-                    Text(
-                      vo.nickName,
-                      style: TextStyle(
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.w600,
-                        color: const Color(0xFF1E1E1E),
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      // 昵称、在线状态
+                      Row(
+                        children: [
+                          Text(
+                            vo.nickName,
+                            style: TextStyle(
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w600,
+                              color: const Color(0xFF1E1E1E),
+                            ),
+                          ),
+                          Container(
+                            width: 9.w,
+                            height: 9.w,
+                            margin: EdgeInsets.only(
+                              left: 6.w,
+                            ),
+                            decoration: BoxDecoration(
+                              color: MyColors.userOnlineColor.color,
+                              borderRadius: BorderRadius.circular(5.w),
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
-                    Container(
-                      width: 9.w,
-                      height: 9.w,
-                      margin: EdgeInsets.only(left: 7.w),
-                      decoration: BoxDecoration(
-                        color: MyColors.userOnlineColor.color,
-                        borderRadius: BorderRadius.circular(5.w),
+                      // 时间
+                      Text(
+                        vo.nearlyMsgTime,
+                        style: TextStyle(
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w400,
+                            color: const Color(0xFFD4D6D8)),
                       ),
-                    ),
-                  ],
-                ),
-                const Spacer(),
-                Text(
-                  vo.nearlyMsgContent,
-                  maxLines: 1,
-                  overflow: TextOverflow.fade,
-                  style: TextStyle(
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w400,
-                    color: const Color(0xFF999999),
+                    ],
                   ),
-                ),
-                SizedBox(height: 6.h),
-              ],
-            ),
-            const Spacer(),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                SizedBox(height: 6.h),
-                Text(
-                  vo.nearlyMsgTime,
-                  style: TextStyle(
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w400,
-                      color: const Color(0xFFD4D6D8)),
-                ),
-                const Spacer(),
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: 2.w, horizontal: 6.w),
-                  decoration: BoxDecoration(
-                    color: MyColors.mainColor.color,
-                    borderRadius: BorderRadius.circular(20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: Text(
+                          vo.nearlyMsgContent,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w400,
+                            color: const Color(0xFF999999),
+                          ),
+                        ),
+                      ),
+                      // 未读消息数
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                            vertical: 2.w, horizontal: 6.w),
+                        decoration: BoxDecoration(
+                          color: MyColors.mainColor.color,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Text(
+                          99 < vo.noReadMsgCount
+                              ? '99+'
+                              : vo.noReadMsgCount.toString(),
+                          style: TextStyle(
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                  child: Text(
-                    vo.noReadMsgCount.toString(),
-                    style: TextStyle(
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 6.h),
-              ],
+                ],
+              ),
             ),
           ],
         ),

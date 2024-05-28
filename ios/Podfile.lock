@@ -2,6 +2,10 @@ PODS:
   - camera_avfoundation (0.0.1):
     - Flutter
   - Flutter (1.0.0)
+  - flutter_sound (9.4.11):
+    - Flutter
+    - flutter_sound_core (= 9.4.11)
+  - flutter_sound_core (9.4.11)
   - image_editor_common (1.0.0):
     - Flutter
   - path_provider_foundation (0.0.1):
@@ -21,6 +25,7 @@ PODS:
 DEPENDENCIES:
   - camera_avfoundation (from `.symlinks/plugins/camera_avfoundation/ios`)
   - Flutter (from `Flutter`)
+  - flutter_sound (from `.symlinks/plugins/flutter_sound/ios`)
   - image_editor_common (from `.symlinks/plugins/image_editor_common/ios`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
   - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
@@ -28,11 +33,17 @@ DEPENDENCIES:
   - sensors_plus (from `.symlinks/plugins/sensors_plus/ios`)
   - video_player_avfoundation (from `.symlinks/plugins/video_player_avfoundation/darwin`)
 
+SPEC REPOS:
+  trunk:
+    - flutter_sound_core
+
 EXTERNAL SOURCES:
   camera_avfoundation:
     :path: ".symlinks/plugins/camera_avfoundation/ios"
   Flutter:
     :path: Flutter
+  flutter_sound:
+    :path: ".symlinks/plugins/flutter_sound/ios"
   image_editor_common:
     :path: ".symlinks/plugins/image_editor_common/ios"
   path_provider_foundation:
@@ -49,6 +60,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   camera_avfoundation: 759172d1a77ae7be0de08fc104cfb79738b8a59e
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  flutter_sound: c7be258397c5881c35ab5c95ed0dd7a855394041
+  flutter_sound_core: 7397a34d3b31224ade1289c5fc4621a613d4d9f7
   image_editor_common: d6f6644ae4a6de80481e89fe6d0a8c49e30b4b43
   path_provider_foundation: 2b6b4c569c0fb62ec74538f866245ac84301af46
   permission_handler_apple: 9878588469a2b0d0fc1e048d9f43605f92e6cec2
