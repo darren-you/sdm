@@ -38,6 +38,9 @@ enum MyColors {
   textFgPwdColor(color: Color(0xFF5D5D5D)),
   textMindColor(color: Color(0xFFFF5B78)),
   userOnlineColor(color: Color(0XFF00C635)),
+  barLine(color: Color(0xFFD4D6D8)),
+  chatNavBg(color: Color(0xFFFAFAFA)),
+  chatHintColor(color: Color(0xFFD4D6D8)),
 
   endColor(color: Colors.amber);
 

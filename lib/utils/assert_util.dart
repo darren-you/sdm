@@ -1,4 +1,4 @@
-/// 本地资源的例举，定义
+// 本地资源的例举，定义
 class AssertUtil {
   AssertUtil._();
 
@@ -64,10 +64,18 @@ class AssertUtil {
   static const String iconGoDown = "assets/images/icon_go_down.svg";
   static const String iconGoUp = "assets/images/icon_go_up.svg";
 
-  ///
+  //
   static const String closeSvg = "assets/images/svg_close.svg";
   static const String recallSvg = "assets/images/svg_recall.svg";
   static const String turnRightSvg = "assets/images/svg_turnright.svg";
+
+  // 聊天界面
+  static const String iconMore = "assets/images/icon_more.svg";
+  static const String iconChatNavPhoto =
+      "assets/images/icon_chat_nav_photo.svg";
+  static const String iconChatNavVoice =
+      "assets/images/icon_chat_nav_voice.svg";
+  static const String iconChatNavSend = "assets/images/icon_chat_nav_send.svg";
 
   static const String no = "";
 }

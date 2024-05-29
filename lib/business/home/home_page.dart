@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:sdm/business/home/home_page_controller.dart';
 import 'package:sdm/business/me/me_page.dart';
-import 'package:sdm/business/message/message_page.dart';
+import 'package:sdm/business/chat/chat_list/chat_list_page.dart';
 import 'package:sdm/business/voice/voice_page.dart';
 import 'package:sdm/components/container/custom_container.dart';
 import 'package:sdm/components/keep_alive_wrapper.dart';
@@ -50,7 +50,7 @@ Widget viewPagerContents(HomePageController controller) {
         child: VoicePage(),
       ),
       KeepAliveWrapper(
-        child: MessagePage(),
+        child: ChatListPage(),
       ),
     ],
   );

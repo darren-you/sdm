@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:sdm/utils/bool_util.dart';
 import 'package:sdm/utils/date_util.dart';
 
-import '../../../utils/string_util.dart';
+import '../../../../utils/string_util.dart';
 
 class MessageListItemVO {
   late String img;
@@ -13,6 +13,7 @@ class MessageListItemVO {
   late String nearlyMsgTime;
   late int noReadMsgCount;
 
+  /// 随机生成10条测试数据
   static List<MessageListItemVO> buidTestData() {
     final messageTestData = <MessageListItemVO>[];
 
@@ -25,10 +26,21 @@ class MessageListItemVO {
         ..nearlyMsgTime =
             DateUtil.getAmOrPmFromatTime(DateUtil.getRandomDateTime())
         ..noReadMsgCount = Random().nextInt(200);
-
       messageTestData.add(item);
     }
 
     return messageTestData;
+  }
+
+  /// 随机生成1条测试数据
+  static MessageListItemVO buidOneTestData() {
+    return MessageListItemVO()
+      ..img = 'assets/images/photo${Random().nextInt(10)}.png'
+      ..nickName = StringUtil.genRandomEnglishName()
+      ..onLineStatus = BoolUtil.genRandomBool()
+      ..nearlyMsgContent = StringUtil.genRandomChatMessage()
+      ..nearlyMsgTime =
+          DateUtil.getAmOrPmFromatTime(DateUtil.getRandomDateTime())
+      ..noReadMsgCount = Random().nextInt(200);
   }
 }
