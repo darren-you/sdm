@@ -73,91 +73,91 @@ class CustomEditNormal extends StatelessWidget {
                     ? Border.all(color: MyColors.coloBlue.color, width: 2)
                     : Border.all(color: Colors.transparent, width: 2),
               ),
-              child: Center(
-                child: TextField(
-                  //maxLengthEnforcement: MaxLengthEnforcement.none,
-                  readOnly: null != onTap ? true : false,
-                  maxLength: maxLength,
-                  textAlignVertical: TextAlignVertical.center,
-                  obscureText: controller.obscureText, // 将文本内容隐藏
-                  focusNode: controller.focusNode,
-                  controller: controller.editController,
-                  keyboardType: controller.keyboardType,
-                  inputFormatters: inputFormatters,
-                  textAlign: textAlign,
-                  cursorRadius: const Radius.circular(0),
-                  cursorColor: cursorColor ?? MyColors.coloBlue.color,
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: MyColors.textMain.color,
-                  ),
-                  onChanged: (value) {
-                    if (null != onChanged) {
-                      onChanged!(value);
-                    }
-                  },
-                  onEditingComplete: () {
-                    controller.focusNode!.unfocus();
-                  },
-                  onTap: onTap,
-                  onTapOutside: (event) {
-                    debugPrint("点击外部区域 $focusNode");
-                    controller.focusNode!.unfocus();
-                  },
-                  decoration: InputDecoration(
-                    counterText: '',
-                    border: InputBorder.none,
-                    hintText: hintText,
-                    contentPadding: const EdgeInsets.only(bottom: 3),
-                    hintStyle: hintStyle,
-                    // 设置左边显示密码Icon
-                    prefixIconConstraints: const BoxConstraints(
-                      maxWidth: 48,
-                      maxHeight: 48,
-                    ),
-                    prefixIcon: leftIcon != null
-                        ? Container(
-                            alignment: Alignment.center,
-                            width: 48,
-                            //color: Colors.amber,
-                            // fix 此处图标切换有抖动，大小也需要调整
-                            child: leftIcon,
-                          )
-                        : const SizedBox(
-                            width: 16,
-                          ),
+              child: TextField(
+                //maxLengthEnforcement: MaxLengthEnforcement.none,
+                readOnly: null != onTap ? true : false,
+                maxLength: maxLength,
+                textAlignVertical: TextAlignVertical.center,
+                obscureText: controller.obscureText, // 将文本内容隐藏
+                focusNode: controller.focusNode,
+                controller: controller.editController,
+                keyboardType: controller.keyboardType,
+                inputFormatters: inputFormatters,
+                textAlign: textAlign,
+                cursorRadius: const Radius.circular(0),
+                cursorColor: cursorColor ?? MyColors.coloBlue.color,
+                style: TextStyle(
+                  fontSize: 16,
+                  color: MyColors.textMain.color,
+                ),
+                onChanged: (value) {
+                  if (null != onChanged) {
+                    onChanged!(value);
+                  }
+                },
+                onEditingComplete: () {
+                  controller.focusNode!.unfocus();
+                },
+                onTap: onTap,
+                onTapOutside: (event) {
+                  debugPrint("点击外部区域 $focusNode");
+                  controller.focusNode!.unfocus();
+                },
+                decoration: InputDecoration(
+                  isCollapsed: true,
+                  isDense: true,
+                  counterText: '',
+                  border: InputBorder.none,
+                  hintText: hintText,
 
-                    // 设置右边显示删除输入Icon
-                    suffixIconConstraints: const BoxConstraints(
-                      maxWidth: 48,
-                      maxHeight: 48,
-                    ),
-                    suffixIcon: showSuffixIcon
-                        ? Container(
-                            alignment: Alignment.center,
-                            width: 48,
-                            //color: Colors.amber,
-                            // fix 此处图标切换有抖动，大小也需要调整
-                            child: (controller.focusNode!.hasFocus &&
-                                    keyboardType ==
-                                        TextInputType.visiblePassword &&
-                                    showSuffixIcon)
-                                ? CustomIconButton(
-                                    controller.showPassword
-                                        ? AssertUtil.iconSee
-                                        : AssertUtil.iconCantSee,
-                                    iconSize: 22,
-                                    defaultColor: HexColor("#A2A2A2"),
-                                    onTap: () {
-                                      controller.toggleShowPass();
-                                    },
-                                  )
-                                : Container(
-                                    color: Colors.transparent,
-                                  ),
-                          )
-                        : const SizedBox(width: 16),
+                  hintStyle: hintStyle,
+                  // 设置左边显示密码Icon
+                  prefixIconConstraints: const BoxConstraints(
+                    maxWidth: 48,
+                    maxHeight: 48,
                   ),
+                  prefixIcon: leftIcon != null
+                      ? Container(
+                          alignment: Alignment.center,
+                          width: 48,
+                          //color: Colors.amber,
+                          // fix 此处图标切换有抖动，大小也需要调整
+                          child: leftIcon,
+                        )
+                      : const SizedBox(
+                          width: 16,
+                        ),
+
+                  // 设置右边显示删除输入Icon
+                  suffixIconConstraints: const BoxConstraints(
+                    maxWidth: 48,
+                    maxHeight: 48,
+                  ),
+                  suffixIcon: showSuffixIcon
+                      ? Container(
+                          alignment: Alignment.center,
+                          width: 48,
+                          //color: Colors.amber,
+                          // fix 此处图标切换有抖动，大小也需要调整
+                          child: (controller.focusNode!.hasFocus &&
+                                  keyboardType ==
+                                      TextInputType.visiblePassword &&
+                                  showSuffixIcon)
+                              ? CustomIconButton(
+                                  controller.showPassword
+                                      ? AssertUtil.iconSee
+                                      : AssertUtil.iconCantSee,
+                                  iconSize: 22,
+                                  defaultColor: HexColor("#A2A2A2"),
+                                  onTap: () {
+                                    controller.toggleShowPass();
+                                  },
+                                )
+                              : Container(
+                                  color: Colors.transparent,
+                                ),
+                        )
+                      : const SizedBox(width: 16),
                 ),
               ),
             );

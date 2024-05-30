@@ -98,7 +98,7 @@ Widget _buildChatMessageListItem(
                   width: 60.w,
                   height: 60.w,
                   color: ColorUtil.getRandomColor(),
-                  child: ExtendedImage.asset(
+                  child: ExtendedImage.network(
                     vo.img,
                     width: 60.w,
                     height: 60.w,

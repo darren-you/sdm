@@ -41,6 +41,7 @@ class BaseUrlPage extends GetView<BaseUrlPageViewModel> {
                 cursorColor: Colors.green,
                 //maxLength: 10,
                 decoration: InputDecoration(
+                  isCollapsed: true,
                   contentPadding: EdgeInsets.zero,
                   counterText: '',
                   // 设置未聚焦时的下划线颜色

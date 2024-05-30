@@ -4,12 +4,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:sdm/business/chat/chat_ing/chat_ing_page_controller.dart';
+import 'package:sdm/business/chat/chat_ing/view/send_text_bubble.dart';
 import 'package:sdm/components/view/custom_body.dart';
 import 'package:sdm/enumm/color_enum.dart';
 import 'package:sdm/utils/assert_util.dart';
-import 'package:sdm/utils/color_util.dart';
+import 'package:sdm/utils/bool_util.dart';
 
-import '../../../components/input/custom_edit.dart';
+import 'view/rec_text_bubble.dart';
 
 class ChatIngPage extends GetView<ChatIngPageController> {
   const ChatIngPage({super.key});
@@ -18,6 +19,7 @@ class ChatIngPage extends GetView<ChatIngPageController> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomBody(
+        backgroundColor: Colors.white,
         scroller: false,
         body: Stack(
           children: [
@@ -40,7 +42,7 @@ class ChatIngPage extends GetView<ChatIngPageController> {
             height: context.mediaQueryPadding.top + 44.h,
             padding: EdgeInsets.only(
                 top: context.mediaQueryPadding.top, left: 16, right: 16),
-            color: Colors.white.withOpacity(0.2),
+            color: Colors.white,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -53,7 +55,7 @@ class ChatIngPage extends GetView<ChatIngPageController> {
                   children: [
                     // 头像
                     ClipOval(
-                      child: ExtendedImage.asset(
+                      child: ExtendedImage.network(
                         controller.messageListItemVO.img,
                         width: 36.w,
                         height: 36.w,
@@ -86,19 +88,28 @@ class ChatIngPage extends GetView<ChatIngPageController> {
 
   /// 消息列表
   Widget _messagesList(BuildContext context, ChatIngPageController controller) {
-    final chatBarHeight = context.mediaQueryPadding.top + 44.5.h;
-    final chatNavHeight = 83.h;
-    return SizedBox.expand(
+    return SizedBox(
+      width: context.width,
+      height: context.height,
       child: ListView.builder(
         itemCount: 20,
         itemBuilder: (context, index) {
-          return Container(
-            height: 60.h,
-            color: ColorUtil.getRandomColor(),
-            margin: EdgeInsets.only(
-                top: index == 0 ? chatBarHeight : 0,
-                bottom: index == 19 ? chatNavHeight : 0),
-          );
+          // return Container(
+          //   height: 60.h,
+          //   color: ColorUtil.getRandomColor(),
+          //   margin: EdgeInsets.only(
+          //       top: index == 0 ? chatBarHeight : 0,
+          //       bottom: index == 19 ? chatNavHeight : 0),
+          // );
+          return BoolUtil.genRandomBool()
+              ? sendTextBubble(
+                  context,
+                  "I’m doing very good!!!I’m doing very goodI’m doing very good How about you sweet?😊",
+                )
+              : recTextBubble(
+                  context,
+                  "I’m doing very good!!!I’m doing very goodI’m doing very good How about you sweet?😊",
+                );
         },
       ),
     );
@@ -118,65 +129,81 @@ class ChatIngPage extends GetView<ChatIngPageController> {
             color: MyColors.barLine.color,
           ),
           Container(
-            width: context.width,
-            height: 82.5.h,
+            height: 50.h,
             color: MyColors.chatNavBg.color,
-            padding: EdgeInsets.only(bottom: context.mediaQueryPadding.bottom),
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20.w),
-              child: Row(
-                children: [
-                  SvgPicture.asset(AssertUtil.iconChatNavVoice,
-                      width: 24.w, height: 24.w),
-                  SizedBox(width: 12.w),
-                  SvgPicture.asset(AssertUtil.iconChatNavPhoto,
-                      width: 24.w, height: 24.w),
-                  SizedBox(width: 14.w),
-                  Expanded(
-                    child: Container(
-                      alignment: Alignment.center,
-                      color: Colors.blue,
-                      child: Center(
-                        child: TextField(
-                          textAlignVertical: TextAlignVertical.center,
-                          textAlign: TextAlign.left,
-                          cursorRadius: const Radius.circular(0),
-                          cursorColor: MyColors.mainColor.color,
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: MyColors.textMain.color,
-                          ),
-                          onChanged: (value) {},
-                          onEditingComplete: () {},
-                          onTap: () {},
-                          onTapOutside: (event) {
-                            debugPrint("点击外部区域");
-                          },
-                          decoration: InputDecoration(
-                            counterText: '',
-                            border: InputBorder.none,
-                            hintText: 'Compose a message…',
-                            hintStyle: TextStyle(
-                              color: MyColors.chatHintColor.color,
-                            ),
-                            contentPadding: const EdgeInsets.only(bottom: 3),
-                          ),
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            child: Row(
+              children: [
+                SvgPicture.asset(AssertUtil.iconChatNavVoice,
+                    width: 24.w, height: 24.w),
+                SizedBox(width: 12.w),
+                SvgPicture.asset(AssertUtil.iconChatNavPhoto,
+                    width: 24.w, height: 24.w),
+                SizedBox(width: 14.w),
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(4.r),
+                    ),
+                    child: TextField(
+                      textAlignVertical: TextAlignVertical.center,
+                      textAlign: TextAlign.left,
+                      cursorRadius: const Radius.circular(0),
+                      cursorColor: MyColors.mainColor.color,
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: MyColors.textMain.color,
+                      ),
+                      onChanged: (value) {},
+                      onEditingComplete: () {},
+                      onTap: () {},
+                      onTapOutside: (event) {
+                        debugPrint("点击外部区域");
+                        controller.focusNode.unfocus();
+                      },
+                      focusNode: controller.focusNode,
+                      decoration: InputDecoration(
+                        isCollapsed: true,
+                        isDense: true,
+                        counterText: '',
+                        border: InputBorder.none,
+                        hintText: 'Compose a message…',
+                        hintStyle: TextStyle(
+                          color: MyColors.chatHintColor.color,
                         ),
+                        contentPadding: EdgeInsets.symmetric(
+                            horizontal: 10.w, vertical: 8.w),
                       ),
                     ),
                   ),
-                  SizedBox(width: 14.w),
-                  SvgPicture.asset(
-                    AssertUtil.iconChatNavSend,
-                    width: 24.w,
-                    height: 24.w,
-                  ),
-                ],
-              ),
+                ),
+                SizedBox(width: 14.w),
+                SvgPicture.asset(
+                  AssertUtil.iconChatNavSend,
+                  width: 24.w,
+                  height: 24.w,
+                ),
+              ],
             ),
+          ),
+          Container(
+            width: context.width,
+            height: context.mediaQueryPadding.bottom,
+            color: MyColors.chatNavBg.color,
+            padding: EdgeInsets.only(bottom: context.mediaQueryPadding.bottom),
           ),
         ],
       ),
     );
+  }
+
+  /// 生成消息列表
+  List<Widget> _buildMessageList(BuildContext context) {
+    final List<Widget> chatList = [];
+
+    //chatList.add(SizedBox(height: chatBarHeight));
+
+    return chatList;
   }
 }

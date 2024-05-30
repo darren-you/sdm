@@ -100,6 +100,8 @@ class CustomEdit extends StatelessWidget {
                     controller.focusNode!.unfocus();
                   },
                   decoration: InputDecoration(
+                    isCollapsed: true,
+                    isDense: true,
                     counterText: '',
                     border: InputBorder.none,
                     hintText: hintText,

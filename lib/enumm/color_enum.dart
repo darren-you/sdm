@@ -41,6 +41,7 @@ enum MyColors {
   barLine(color: Color(0xFFD4D6D8)),
   chatNavBg(color: Color(0xFFFAFAFA)),
   chatHintColor(color: Color(0xFFD4D6D8)),
+  recMessageBubbleBg(color: Color(0xFFF4F4F4)),
 
   endColor(color: Colors.amber);
 

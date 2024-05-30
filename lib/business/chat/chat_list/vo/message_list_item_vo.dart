@@ -1,9 +1,8 @@
 import 'dart:math';
 
+import 'package:sdm/business/account/util/user_info_util.dart';
 import 'package:sdm/utils/bool_util.dart';
 import 'package:sdm/utils/date_util.dart';
-
-import '../../../../utils/string_util.dart';
 
 class MessageListItemVO {
   late String img;
@@ -13,16 +12,16 @@ class MessageListItemVO {
   late String nearlyMsgTime;
   late int noReadMsgCount;
 
-  /// 随机生成10条测试数据
-  static List<MessageListItemVO> buidTestData() {
+  /// 随机生成测试数据
+  static List<MessageListItemVO> buidTestData(int count) {
     final messageTestData = <MessageListItemVO>[];
 
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < count; i++) {
       final item = MessageListItemVO()
-        ..img = 'assets/images/photo${i + 1}.png'
-        ..nickName = StringUtil.genRandomEnglishName()
+        ..img = UserInfoUtil.genRandomAvatar()
+        ..nickName = UserInfoUtil.genRandomEnglishName()
         ..onLineStatus = BoolUtil.genRandomBool()
-        ..nearlyMsgContent = StringUtil.genRandomChatMessage()
+        ..nearlyMsgContent = UserInfoUtil.genRandomChatMessage()
         ..nearlyMsgTime =
             DateUtil.getAmOrPmFromatTime(DateUtil.getRandomDateTime())
         ..noReadMsgCount = Random().nextInt(200);
@@ -35,10 +34,10 @@ class MessageListItemVO {
   /// 随机生成1条测试数据
   static MessageListItemVO buidOneTestData() {
     return MessageListItemVO()
-      ..img = 'assets/images/photo${Random().nextInt(10)}.png'
-      ..nickName = StringUtil.genRandomEnglishName()
+      ..img = UserInfoUtil.genRandomAvatar()
+      ..nickName = UserInfoUtil.genRandomEnglishName()
       ..onLineStatus = BoolUtil.genRandomBool()
-      ..nearlyMsgContent = StringUtil.genRandomChatMessage()
+      ..nearlyMsgContent = UserInfoUtil.genRandomChatMessage()
       ..nearlyMsgTime =
           DateUtil.getAmOrPmFromatTime(DateUtil.getRandomDateTime())
       ..noReadMsgCount = Random().nextInt(200);

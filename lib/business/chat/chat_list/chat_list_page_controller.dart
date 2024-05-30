@@ -7,7 +7,7 @@ import 'chat_list_page.dart';
 
 class MessagePageController extends GetxController {
   final List<MessageListItemVO> chatMessageList =
-      MessageListItemVO.buidTestData();
+      MessageListItemVO.buidTestData(20);
   GlobalKey<AnimatedListState> listKey = GlobalKey<AnimatedListState>();
 
   /// 跳转到具体聊天界面
