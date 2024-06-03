@@ -5,8 +5,8 @@ import 'package:get_storage/get_storage.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:logger/logger.dart';
 
-import '../business/service_environment/repository/base_url_impl.dart';
-import '../business/service_environment/repository/base_url_service.dart';
+import '../business/net_env/repository/base_url_impl.dart';
+import '../business/net_env/repository/base_url_service.dart';
 import '../utils/dio_util.dart';
 
 final Logger logger = Logger();

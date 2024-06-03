@@ -9,6 +9,7 @@ import 'package:sdm/components/view/custom_body.dart';
 import 'package:sdm/enumm/color_enum.dart';
 import 'package:sdm/utils/assert_util.dart';
 import 'package:sdm/utils/bool_util.dart';
+import 'package:sdm/utils/screen_util.dart';
 
 import 'view/rec_text_bubble.dart';
 
@@ -88,20 +89,18 @@ class ChatIngPage extends GetView<ChatIngPageController> {
 
   /// 消息列表
   Widget _messagesList(BuildContext context, ChatIngPageController controller) {
-    return SizedBox(
-      width: context.width,
-      height: context.height,
-      child: ListView.builder(
-        itemCount: 20,
-        itemBuilder: (context, index) {
-          // return Container(
-          //   height: 60.h,
-          //   color: ColorUtil.getRandomColor(),
-          //   margin: EdgeInsets.only(
-          //       top: index == 0 ? chatBarHeight : 0,
-          //       bottom: index == 19 ? chatNavHeight : 0),
-          // );
-          return BoolUtil.genRandomBool()
+    final List<Widget> messages = [];
+    for (var i = 0; i < 20; i++) {
+      if (i == 0) {
+        messages.add(SizedBox(
+            height: MyScreenUtil.getInstance().statusBarHeight + 44.5.h));
+      } else if (i == 19) {
+        messages.add(SizedBox(
+            height:
+                MyScreenUtil.getInstance().bottomNavBarHeight + 50.5.h + 20.h));
+      } else {
+        messages.add(
+          BoolUtil.genRandomBool()
               ? sendTextBubble(
                   context,
                   "I’m doing very good!!!I’m doing very goodI’m doing very good How about you sweet?😊",
@@ -109,8 +108,16 @@ class ChatIngPage extends GetView<ChatIngPageController> {
               : recTextBubble(
                   context,
                   "I’m doing very good!!!I’m doing very goodI’m doing very good How about you sweet?😊",
-                );
-        },
+                ),
+        );
+      }
+    }
+
+    return SizedBox(
+      width: context.width,
+      height: context.height,
+      child: ListView(
+        children: messages,
       ),
     );
   }

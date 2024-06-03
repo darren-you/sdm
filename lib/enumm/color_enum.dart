@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 /// 定义自定义颜色枚举类
@@ -49,4 +51,10 @@ enum MyColors {
   const MyColors({
     required this.color,
   });
+
+  /// 随机颜色
+  static Color randomColor() {
+    final random = Random();
+    return Color(0xFFFFFFFF & random.nextInt(0xFFFFFFFF));
+  }
 }

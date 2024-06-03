@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/widgets.dart';
 
+import '../services/app_init_service.dart';
 import 'api_path_util.dart';
 
 enum DioConfig {
@@ -31,9 +32,9 @@ class DioUtil {
 
   // dio初始化配置 https://github.com/cfug/dio/blob/main/dio/README-ZH.md -> 【请求配置】
   static void _defaultBaseUrl({String? loginToken}) {
-    debugPrint("初始化Dio✅ 带BASE_URL > > > ${ApiPathUtil.getSpringBootBaseUrl()}");
+    debugPrint("初始化Dio✅ 带BASE_URL > > > ${ApiPathUtil.getBaseUrl()}");
     _defaultOptions = BaseOptions(
-        baseUrl: ApiPathUtil.getSpringBootBaseUrl(),
+        baseUrl: ApiPathUtil.getBaseUrl(),
         contentType: Headers.jsonContentType);
     _defaultBaseUrlDio = Dio(_defaultOptions);
     if (null != loginToken) {
@@ -93,7 +94,7 @@ class DioUtil {
       Map<String, dynamic>? queryParameters,
       Options? options}) async {
     final dio = useDefaultBaseUrl ? _defaultBaseUrlDio : _otherBaseUrlDio;
-    debugPrint(
+    logger.i(
         '< < <   Post请求   > > > \n------baseUrl: ${dio.options.baseUrl} \n------path:$url \n------header(请求头信息):$options \n------query(url参数):$queryParameters \n------body:$data');
     try {
       Response response = await dio.post(
