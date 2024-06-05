@@ -30,6 +30,11 @@ class SigninPageController extends GetxController {
   void onInit() {
     super.onInit();
 
+    _initUiInputListener();
+  }
+
+  /// 初始化UI输入监听
+  void _initUiInputListener() {
     emailController.addListener(() {
       final emailContent = emailController.text;
       if (emailContent.isNotEmpty && emailContent.isEmail) {

@@ -11,5 +11,6 @@ class RoutesPath {
 
   // demo page -----------
   static const soundPage = '/soundPage';
+  static const baseUrlPage = '/baseUrlPage';
   // demo page -----------
 }

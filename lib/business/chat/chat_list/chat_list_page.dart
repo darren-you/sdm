@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 import 'package:sdm/business/chat/chat_list/chat_list_page_controller.dart';
 import 'package:sdm/business/chat/chat_list/vo/message_list_item_vo.dart';
 import 'package:sdm/components/view/custom_body.dart';
-import 'package:sdm/utils/screen_util.dart';
 
 import '../../../enumm/color_enum.dart';
 

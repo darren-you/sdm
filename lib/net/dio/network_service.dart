@@ -1,12 +1,14 @@
 import 'package:dio/dio.dart';
-import 'package:sdm/net/api/dio_client.dart';
+import 'package:sdm/net/dio/dio_client.dart';
 import '../../services/app_init_service.dart';
 import 'error_handler.dart';
 import 'interceptors.dart';
 import '../models.dart';
 
 class NetworkService {
-  static final Dio _dio = DioClient.getInstance(false);
+  NetworkService._();
+
+  static final Dio _dio = DioClient.getInstance(useBaseUrlDio: true);
 
   static void init() {
     _dio.interceptors.add(AuthInterceptor());

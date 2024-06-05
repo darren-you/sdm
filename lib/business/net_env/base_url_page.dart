@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sdm/enumm/appbar_heght_enum.dart';
+import 'package:sdm/utils/screen_util.dart';
 
 import '../../components/appbar/normal_appbar.dart';
 import '../../components/container/custom_icon_button.dart';
@@ -15,6 +16,8 @@ class BaseUrlPage extends GetView<BaseUrlPageViewModel> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomBody(
+        appBarHeight: MyScreenUtil.getInstance().statusBarHeight +
+            AppBarHeight.hight50.height,
         appBar: NormalAppBar(
           title: const Text(
             '编辑BaseUrl',

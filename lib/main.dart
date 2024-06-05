@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
@@ -18,6 +19,8 @@ import 'utils/routes_util.dart';
 /// In new Podfile, adjust platform to 14.0 and Uncomment that line
 /// run 【pod install】 in your iOS program
 void main() async {
+  //debugPaintSizeEnabled = true; // 绘制小部件边界
+  //debugPaintBaselinesEnabled = true; // 绘制文本基线
   // 全局初始化
   await AppInitService.init();
   runApp(const SDMApp());

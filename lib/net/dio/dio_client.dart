@@ -5,15 +5,18 @@ import '../../utils/api_path_util.dart';
 
 class DioClient {
   static final Dio _normalDio = Dio();
-  static late Dio? _baseUrlDio;
+  static Dio? _baseUrlDio = null;
 
   static late BaseOptions _defaultOptions;
 
   DioClient._();
 
-  static Dio getInstance(bool useBaseUrlDio) {
-    if (useBaseUrlDio) {
-      if (_baseUrlDio == null) throw Exception('请先初始化 BaseUrlDio');
+  static Dio getInstance({bool? useBaseUrlDio, String? loginToken}) {
+    if (useBaseUrlDio!) {
+      if (_baseUrlDio == null) {
+        _initBaseUrlDio();
+      }
+
       return _baseUrlDio!;
     }
 
@@ -21,7 +24,7 @@ class DioClient {
   }
 
   /// dio初始化配置 https://github.com/cfug/dio/blob/main/dio/README-ZH.md -> 【请求配置】
-  static void initBaseUrlDio({String? loginToken}) {
+  static void _initBaseUrlDio({String? loginToken}) {
     logger.i("初始化Dio✅ 带BASE_URL > > > ${ApiPathUtil.getBaseUrl()}");
     _defaultOptions = BaseOptions(
         baseUrl: ApiPathUtil.getBaseUrl(),

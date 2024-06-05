@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sdm/utils/routes_util.dart';
 
+import '../api/register_account_api.dart';
+
 class SignupPageController extends GetxController {
+  final registerAccountApi = Get.find<RegisterAccountApi>();
+
   var mindInfo = ''.obs;
   var emailCorrectState = false.obs;
   var passwordCorrectState = false.obs;
@@ -26,9 +30,14 @@ class SignupPageController extends GetxController {
   }
 
   @override
-  void onInit() {
+  void onInit() async {
     super.onInit();
 
+    _initUiInputListener();
+    await _getToken();
+  }
+
+  void _initUiInputListener() {
     emailController.addListener(() {
       final emailContent = emailController.text;
       if (emailContent.isNotEmpty && emailContent.isEmail) {
@@ -51,5 +60,10 @@ class SignupPageController extends GetxController {
         mindInfo.value = '';
       }
     });
+  }
+
+  /// 获取Token
+  Future<void> _getToken() async {
+    await registerAccountApi.getToken();
   }
 }

@@ -102,6 +102,7 @@ Widget loginFunWidget(BuildContext context) {
         Padding(padding: EdgeInsets.only(bottom: 16.h)),
         GestureDetector(
           onTap: () => Get.toNamed(RoutesPath.soundPage),
+          onLongPress: () => Get.toNamed(RoutesPath.baseUrlPage),
           child: Text(
             'Serious Discreet Meet',
             style: TextStyle(
