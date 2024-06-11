@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:sdm/net/dio/dio_client.dart';
 import '../../services/app_init_service.dart';
+import 'api_response.dart';
 import 'error_handler.dart';
 import 'interceptors.dart';
-import '../models.dart';
 
 class NetworkService {
   NetworkService._();
@@ -20,14 +20,16 @@ class NetworkService {
   /// data - 请求体
   /// queryParameters - 请求参数
   /// options - 请求配置
-  static Future<ApiResponse<T>> get<T>(String url,
-      {bool useDefaultBaseUrl = true,
-      Object? data,
-      Map<String, dynamic>? queryParameters,
-      Options? options}) async {
+  static Future<ApiResponse<T>> get<T>(
+    String url, {
+    bool useDefaultBaseUrl = true,
+    Object? data,
+    Map<String, dynamic>? queryParameters,
+    Options? options,
+  }) async {
     try {
       logger.i(
-          '< < <   Get请求   > > > \n------baseUrl: ${_dio.options.baseUrl} \n------path:$url \n------header(请求头信息):$options \n------query(url参数):$queryParameters \n------body:$data');
+          '< < <   Get请求   > > > \n------baseUrl: ${_dio.options.baseUrl} \n------path:$url \n------header(请求头信息):${_dio.options.headers} \n------query(url参数):$queryParameters \n------body:$data');
 
       final response = await _dio.get(url,
           data: data, queryParameters: queryParameters, options: options);
@@ -36,7 +38,7 @@ class NetworkService {
 
       return ApiResponse<T>(
         statusCode: response.statusCode,
-        data: response.data as T,
+        data: response.data,
         message: '请求成功',
       );
     } catch (error) {
@@ -64,7 +66,7 @@ class NetworkService {
       Options? options}) async {
     try {
       logger.i(
-          '< < <   Post请求   > > > \n------baseUrl: ${_dio.options.baseUrl} \n------path:$url \n------header(请求头信息):$options \n------query(url参数):$queryParameters \n------body:$data');
+          '< < <   Post请求   > > > \n------baseUrl: ${_dio.options.baseUrl} \n------path:$url \n------header(请求头信息):${_dio.options.headers} \n------query(url参数):$queryParameters \n------body:$data');
 
       final response = await _dio.post(
         url,
@@ -77,7 +79,7 @@ class NetworkService {
 
       return ApiResponse<T>(
         statusCode: response.statusCode,
-        data: response.data as T,
+        data: response.data,
         message: '请求成功',
       );
     } catch (error) {

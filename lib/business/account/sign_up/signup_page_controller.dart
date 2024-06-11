@@ -37,6 +37,7 @@ class SignupPageController extends GetxController {
     await _getToken();
   }
 
+  /// 初始化输入框监听
   void _initUiInputListener() {
     emailController.addListener(() {
       final emailContent = emailController.text;

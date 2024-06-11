@@ -1,4 +1,4 @@
-import '../../../net/models.dart';
+import '../../../net/dio/api_response.dart';
 
 abstract class RegisterAccountApi {
   /// 获取 Token
