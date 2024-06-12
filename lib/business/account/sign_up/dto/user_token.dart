@@ -10,7 +10,7 @@ String userTokenToJson(UserToken data) => json.encode(data.toJson());
 
 class UserToken {
   String accessToken;
-  String expriedIn;
+  int expriedIn;
   String refreshToken;
 
   UserToken({

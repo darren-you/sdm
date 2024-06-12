@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sdm/business/account/token/token_api.dart';
 import 'package:sdm/utils/routes_util.dart';
 
-import '../api/register_account_api.dart';
-
 class SignupPageController extends GetxController {
-  final registerAccountApi = Get.find<RegisterAccountApi>();
+  final tokenApi = Get.find<TokenApi>();
 
   var mindInfo = ''.obs;
   var emailCorrectState = false.obs;
@@ -30,11 +29,17 @@ class SignupPageController extends GetxController {
   }
 
   @override
-  void onInit() async {
+  void onInit() {
     super.onInit();
 
     _initUiInputListener();
+  }
+
+  @override
+  void onReady() async {
     await _getToken();
+
+    super.onReady();
   }
 
   /// 初始化输入框监听
@@ -65,6 +70,6 @@ class SignupPageController extends GetxController {
 
   /// 获取Token
   Future<void> _getToken() async {
-    await registerAccountApi.getToken();
+    await tokenApi.getToken();
   }
 }

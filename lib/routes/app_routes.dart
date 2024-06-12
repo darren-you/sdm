@@ -11,8 +11,6 @@ import 'package:sdm/business/chat/chat_list/chat_list_page_controller.dart';
 import 'package:sdm/business/net_env/base_url_page_vm.dart';
 import 'package:sdm/utils/routes_util.dart';
 
-import '../business/account/api/register_account_api.dart';
-import '../business/account/api/register_account_service.dart';
 import '../business/account/sign_up/signup_page.dart';
 import '../business/account/sign_up/signup_page_controller.dart';
 import '../business/chat/chat_ing/chat_ing_page_controller.dart';
@@ -54,7 +52,6 @@ class AppPages {
       page: () => const SignupPage(),
       binding: BindingsBuilder(
         () {
-          Get.put<RegisterAccountApi>(RegisterAccountService());
           Get.lazyPut(() => SignupPageController());
         },
       ),

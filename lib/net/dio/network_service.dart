@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:sdm/net/dio/dio_client.dart';
 import '../../services/app_init_service.dart';
-import 'api_response.dart';
+
 import 'error_handler.dart';
 import 'interceptors.dart';
 
@@ -20,7 +20,7 @@ class NetworkService {
   /// data - 请求体
   /// queryParameters - 请求参数
   /// options - 请求配置
-  static Future<ApiResponse<T>> get<T>(
+  static Future<Response<T>> get<T>(
     String url, {
     bool useDefaultBaseUrl = true,
     Object? data,
@@ -30,27 +30,23 @@ class NetworkService {
     try {
       logger.i(
           '< < <   Get请求   > > > \n------baseUrl: ${_dio.options.baseUrl} \n------path:$url \n------header(请求头信息):${_dio.options.headers} \n------query(url参数):$queryParameters \n------body:$data');
-
-      final response = await _dio.get(url,
+      final Response<T> response = await _dio.get<T>(url,
           data: data, queryParameters: queryParameters, options: options);
-
       logger.i('< < <   Get结果   > > > \n------result:${response.data}');
 
-      return ApiResponse<T>(
-        statusCode: response.statusCode,
-        data: response.data,
-        message: '请求成功',
-      );
-    } catch (error) {
+      return response;
+    } on DioException catch (error) {
       logger.e(
-          '< < <   Get请求失败   > > > \n------错误类型:${(error as DioException).type} \n------错误信息:$error');
+          '< < <   Get请求失败   > > > \n------错误类型:${error.runtimeType} \n------错误信息:$error');
       ErrorHandler.handleError(error);
-
-      return ApiResponse<T>(
-        statusCode: -1,
-        message: '请求失败',
+      return Response<T>(
+        requestOptions: error.requestOptions,
         data: null,
+        statusCode: error.response?.statusCode ?? 500,
+        statusMessage: error.message,
       );
+    } catch (e) {
+      throw Exception('Unknown error occurred: $e');
     }
   }
 
@@ -59,7 +55,7 @@ class NetworkService {
   /// data - 请求体
   /// queryParameters - 请求参数
   /// options - 请求配置
-  static Future<ApiResponse<T>> post<T>(String url,
+  static Future<Response<T>> post<T>(String url,
       {bool useDefaultBaseUrl = true,
       Object? data,
       Map<String, dynamic>? queryParameters,
@@ -68,30 +64,27 @@ class NetworkService {
       logger.i(
           '< < <   Post请求   > > > \n------baseUrl: ${_dio.options.baseUrl} \n------path:$url \n------header(请求头信息):${_dio.options.headers} \n------query(url参数):$queryParameters \n------body:$data');
 
-      final response = await _dio.post(
+      final Response<T> response = await _dio.post<T>(
         url,
         data: data,
         queryParameters: queryParameters,
         options: options,
       );
-
       logger.i('< < <   Post结果   > > > \n------result:${response.data}');
-
-      return ApiResponse<T>(
-        statusCode: response.statusCode,
-        data: response.data,
-        message: '请求成功',
-      );
-    } catch (error) {
+      return response;
+    } on DioException catch (error) {
       logger.e(
-          '< < <   Post请求失败   > > > \n------错误类型:${(error as DioException).type} \n------ 错误信息:$error');
+          '< < <   Post请求失败   > > > \n------错误类型:${error.runtimeType} \n------ 错误信息:$error');
       ErrorHandler.handleError(error);
-
-      return ApiResponse<T>(
-        statusCode: -1,
-        message: '请求失败',
+      // 返回一个表示错误的响应，默认构造或根据需要定制
+      return Response<T>(
+        requestOptions: error.requestOptions,
         data: null,
+        statusCode: error.response?.statusCode ?? 500,
+        statusMessage: error.message,
       );
+    } catch (e) {
+      throw Exception('Unknown error occurred: $e');
     }
   }
 }
