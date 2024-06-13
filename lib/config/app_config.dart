@@ -1,8 +1,16 @@
 import 'dart:convert';
 import 'package:crypto/crypto.dart';
+import 'package:sdm/utils/storage_util.dart';
+
+import '../enumm/storage_key_enum.dart';
 
 class AppConfig {
   AppConfig._();
+
+  // access_token
+  static String? _accessToken;
+  // refresh_token
+  static String? _refreshToken;
 
   // platfrom
   static const platfrom = "iOS";
@@ -30,5 +38,33 @@ class AppConfig {
     var digest = md5.convert(bytes);
 
     return digest.toString();
+  }
+
+  /// 获取 accessToken
+  static String? getAccessToken() {
+    _accessToken ??= GetStorageUtil.readData(StorageKeyEnum.accessToken.key);
+    return _accessToken;
+  }
+
+  /// 获取 refreshToken
+  static String? getRefreshToken() {
+    _refreshToken ??= GetStorageUtil.readData(StorageKeyEnum.refreshToken.key);
+    return _refreshToken;
+  }
+
+  /// 同步更新本地Token
+  static void updateLocalToken() {
+    _accessToken = null;
+    _refreshToken = null;
+    getAccessToken();
+    getRefreshToken();
+  }
+
+  /// 清除Token
+  static void clearToken() {
+    _accessToken = null;
+    _refreshToken = null;
+    GetStorageUtil.removeData(StorageKeyEnum.accessToken.key);
+    GetStorageUtil.removeData(StorageKeyEnum.refreshToken.key);
   }
 }

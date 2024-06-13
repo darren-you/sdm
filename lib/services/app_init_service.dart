@@ -4,7 +4,10 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:logger/logger.dart';
+import 'package:sdm/config/app_config.dart';
 
+import '../business/account/token/token_api.dart';
+import '../business/account/token/token_api_impl.dart';
 import '../business/net_env/repository/base_url_impl.dart';
 import '../business/net_env/repository/base_url_service.dart';
 import '../net/dio/network_service.dart';
@@ -42,7 +45,9 @@ class AppInitService {
     Get.put<BaseUrlService>(BaseUrlImpl());
 
     // 网络
-    NetworkService.init();
+    AppConfig.clearToken();
+    NetworkService.initInterceptor();
+    Get.put<TokenApi>(TokenApiImpl());
 
     // 初始化用户信息ViewModel
     logger.i('< < <   全局初始化 end...   > > >');

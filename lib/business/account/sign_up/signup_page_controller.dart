@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sdm/business/account/token/token_api.dart';
+import 'package:sdm/config/app_config.dart';
 import 'package:sdm/utils/routes_util.dart';
 
 class SignupPageController extends GetxController {
@@ -70,6 +71,7 @@ class SignupPageController extends GetxController {
 
   /// 获取Token
   Future<void> _getToken() async {
-    await tokenApi.getToken();
+    final userToken = AppConfig.getAccessToken();
+    if (userToken == null) await tokenApi.getToken();
   }
 }

@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:sdm/business/account/token/token_api.dart';
 import 'package:sdm/business/account/token/token_api_path.dart';
+import 'package:sdm/config/app_config.dart';
+import 'package:sdm/enumm/storage_key_enum.dart';
+import 'package:sdm/utils/storage_util.dart';
 
 import '../../../components/view/we_chat_loading.dart';
 import '../../../net/dio/network_service.dart';
@@ -30,9 +33,15 @@ class TokenApiImpl implements TokenApi {
     // 存储Token
     if (userTokenResponse.data != null) {
       final UserToken userToken = UserToken.fromJson(userTokenResponse.data);
-      logger.d(
-          '获取Token 成功! \n access_token: ${userToken.accessToken} \n refresh_token: ${userToken.refreshToken}');
       // 本地存储Token
+      GetStorageUtil.writeData(
+          StorageKeyEnum.accessToken.key, userToken.accessToken);
+      GetStorageUtil.writeData(
+          StorageKeyEnum.refreshToken.key, userToken.refreshToken);
+      AppConfig.updateLocalToken();
+      logger.d(
+          '获取Token 成功! \n access_token: ${userToken.accessToken} \n expriedIn: ${userToken.expriedIn} \n refresh_token: ${userToken.refreshToken}');
+      // 添加拦截器
     } else {
       logger.e('$tag: 获取token失败!');
     }

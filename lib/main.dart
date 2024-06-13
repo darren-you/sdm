@@ -4,8 +4,6 @@ import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 import 'package:sdm/utils/screen_util.dart';
 
-import 'business/account/token/token_api.dart';
-import 'business/account/token/token_api_impl.dart';
 import 'routes/app_routes.dart';
 import 'routes/routing_callback_listener.dart';
 import 'services/app_init_service.dart';
@@ -51,8 +49,6 @@ class SDMApp extends StatelessWidget {
           onInit: () {
             // 屏幕适配
             MyScreenUtil.getInstance().init(context);
-            // Token 服务
-            Get.put<TokenApi>(TokenApiImpl());
           },
         );
       },

@@ -10,7 +10,12 @@ class NetworkService {
 
   static final Dio _dio = DioClient.getInstance(useBaseUrlDio: true);
 
-  static void init() {
+  /// 添加拦截器
+  ///
+  /// 添加认证拦截器
+  /// 添加错误拦截器
+  static void initInterceptor() {
+    _dio.interceptors.clear();
     _dio.interceptors.add(AuthInterceptor());
     _dio.interceptors.add(ErrorInterceptor());
   }
